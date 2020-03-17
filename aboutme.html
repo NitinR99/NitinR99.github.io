@@ -5,56 +5,171 @@
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Dark Mode Switch</title>
-  <meta name="description" content="Add a dark-mode theme toggle with a Bootstrap Custom Switch">
-
-  <meta property="og:site_name" content="GitHub">
-  <meta property="og:image"
-    content="https://repository-images.githubusercontent.com/194995309/38db8f80-9db7-11e9-998f-43f2a26d9e0b">
-  
-  <link rel="author" href="https://christianoliff.com/">
-
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>About me</title>
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> -->
+  <link href="css/bootstrap-4.3.1.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/dark-mode.css">
 </head>
 
 <body class="bg-white text-center d-flex h-100">
   <div class="container d-flex p-3 mx-auto flex-column">
-    <header class="mb-auto">
-      <h3 class="float-left">Dark Mode Switch</h3>
-      <nav class="nav justify-content-center float-right">
-        <a class="nav-link active" href="https://coliff.github.io/dark-mode-switch/">Home</a>
-        <a class="nav-link" href="https://github.com/coliff/dark-mode-switch" target="_blank">GitHub</a>
-        <div class="nav-link">
+    <div class="nav-link">
 
-          <div class="custom-control custom-switch">
+      <div class="custom-control custom-switch">
             <input type="checkbox" class="custom-control-input" id="darkSwitch">
             <label class="custom-control-label" for="darkSwitch">Dark Mode</label>
           </div>
 
-          <script src="js/dark-mode-switch.min.js"></script>
+      <script src="js/dark-mode-switch.min.js"></script>
 
         </div>
-      </nav>
-    </header>
 
     <main role="main">
-      <h1>🌓 Dark Mode Switch</h1>
-      <p class="lead">Add a dark-mode theme switch with a Bootstrap Custom Switch</p>
-      <ul class="list-unstyled">
-        <li>&middot; Uses local storage to save preference</li>
-        <li>&middot; Only 262 Bytes minified and gzipped!</li>
-      </ul>
-      <p>
-        <a href="https://github.com/coliff/dark-mode-switch" target="_blank" rel="noopener"
-          class="btn btn-lg btn-secondary">
-          Learn more
-        </a>
-      </p>
+      <div class="container-fluid">
+	    <div class="row">
+			<div class="col-lg-3">
+				<div class="card col-md-4 col-lg-12"><br><br> <i class="fa fa-university" style="font-size:48px;"></i> 
+			    <div class="card-body">
+			      <h5 class="card-title">Student</h5>
+			      <p class="card-text">I am a second year student at the University of Windsor</p>
+			       </div>
+		    </div>
+			</div>
+	      <div class="col-lg-3">
+		    <div class="card col-md-4 col-lg-12"> <br><br> <i class="fa fa-code-fork" style="font-size:48px;"></i>
+			    <div class="card-body">
+			      <h5 class="card-title">Work</h5>
+			      <p class="card-text">I am a teaching assistant at the university.</p>
+			       </div>
+		    </div>
+          </div>
+	      <div class="col-lg-3">
+			  <div class="card col-md-4 col-lg-12"> <br><br> <i class="fa fa-flag" style="font-size:48px;"></i>
+			    <div class="card-body">
+			      <h5 class="card-title">Elected</h5>
+			      <p class="card-text">I am an Undergraduate representative for the School of Computer Science.</p>
+			       </div>
+		    </div>
+			</div>
+	      <div class="col-lg-3">
+		    <div class="card col-md-4 col-lg-12"> <br><br> <i class="fa fa-codepen" style="font-size:48px;"></i>
+			    <div class="card-body">
+			      <h5 class="card-title">Projects</h5>
+			      <p class="card-text">Constantly working on my projects, and starting new ones as ideas arise.</p>
+			       </div>
+		    </div>
+			</div>
+        </div>
+      </div>
+		</br></br></br>
+      <div class="container"></div>
+<div class="container-fluid">
+      <div class="row">
+	      <div class="col-lg-5">
+	       <img src="images/profile-image.jpg" class="rounded img-fluid"> </div>
+	       <div class="col-lg-7">
+			   <h3>a little bit more about me</h2><br><br>
+			   <p class="text-left">Proficient in <b>Java</b>, <b>C</b>,<b> HTML</b>, <b>CSS</b>, <b>Javascript</b>, <b>React Native</b>, <b>Assembly</b>, <b>Git</b>, <b>Node.js</b>, <b>Firebase</b>,<b> LaTex</b>, <b>Android App Development</b> and <b>MS Office suite</b></p>
+			   <p class="text-left">Familiar with <b>Python</b>, <b>PHP</b>, <b>C#</b>, <b>C++</b>, <b>Arduino</b> and <b>Raspberry Pi</b></p>
+		  </div>
+      </div>
+	
+	  <div class="container"><br><br></div>
+	  <div class="container-fluid">
+		  <h3>Get in touch</h3>
+		  <p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate to contact me directly.</p>
+
+    <div class="row">
+
+        <!--Grid column-->
+        <div class="col-md-9 mb-md-0 mb-5">
+            <form id="contact-form" name="contact-form" action="mail.php" method="POST">
+
+                <!--Grid row-->
+                <div class="row">
+
+                    <!--Grid column-->
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <input type="text" id="name" name="name" class="form-control">
+                            <label for="name" class="">Name</label>
+                        </div>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <input type="text" id="email" name="email" class="form-control">
+                            <label for="email" class="">Email Address</label>
+                        </div>
+                    </div>
+                    <!--Grid column-->
+
+                </div>
+                <!--Grid row-->
+
+                <!--Grid row-->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="md-form mb-0">
+                            <input type="text" id="subject" name="subject" class="form-control">
+                            <label for="subject" class="">Subject</label>
+                        </div>
+                    </div>
+                </div>
+                <!--Grid row-->
+
+                <!--Grid row-->
+                <div class="row">
+
+                    <!--Grid column-->
+                    <div class="col-md-12">
+
+                        <div class="md-form">
+                            <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
+                            <label for="message">Your message</label>
+                        </div>
+
+                    </div>
+                </div>
+                <!--Grid row-->
+
+            </form>
+
+            <div class="text-center text-md-left">
+                <a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Send</a>
+            </div>
+            <div class="status"></div>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-md-3 text-center">
+            <ul class="list-unstyled mb-0">
+                <li><i class="fa fa-envelope fa-2x"></i>
+                    <p>rames11a@uwindsor.ca</p>
+                </li>
+				<br>
+				<li><i class="fa fa-envelope fa-2x"></i>
+                    <p>rameshnitin99@gmail.com</p>
+                </li>
+            </ul>
+        </div>
+        <!--Grid column-->
+
+    </div>
+
+
+	</div>
+<div class="container"><br><br></div>
+</div>
     </main>
 
     <footer class="mt-auto">
-      <p>&copy; 2019</p>
+      <p>Click here to view my resume.</p>
     </footer>
 
   </div>
