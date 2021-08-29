@@ -79,7 +79,8 @@ transition={{ duration: 1 }}
               {perval.personal.map((data, key) => {
                 return (
                   <FlexboxGrid.Item componentClass={Col} colspan={24} md={8}>
-                    <Panel header={data.name} shaded>
+                    <Panel shaded>
+                      <h5 style={{color:"#EEEEEE"}}>{data.name}</h5><br/>
                       <p>{data.description}</p><br/>
                       {data.github != null && data.github !== "private"?
                       <IconButton
@@ -121,8 +122,9 @@ transition={{ duration: 1 }}
               {perval.academic.map((data, key) => {
                 return (
                   <FlexboxGrid.Item componentClass={Col} colspan={24} md={8}>
-                    <Panel header={data.name} shaded>
-                      <p>{data.description}</p>
+                    <Panel shaded>
+                      <h5 style={{color:"#EEEEEE"}}>{data.name}</h5><br/>
+                      <p>{data.description}</p><br/>
                       {data.github != null && data.github !== "private"?
                       <IconButton
                           style={{backgroundColor:"#1f2530", color: "#EEEEEE"}}
@@ -162,7 +164,8 @@ transition={{ duration: 1 }}
               {perval.contract.map((data, key) => {
                 return (
                   <FlexboxGrid.Item componentClass={Col} colspan={24} md={8}>
-                    <Panel header={data.name} shaded>
+                    <Panel shaded>
+                      <h5 style={{color:"#EEEEEE"}}>{data.name}</h5><br/>
                       <p>{data.description}</p>
                       {data.github != null && data.github !== "private"?
                       <IconButton
