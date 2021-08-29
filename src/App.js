@@ -12,7 +12,7 @@ import 'rsuite/lib/styles/index.less';
 function App() {
   return (
 
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
     <NavigBar /><br/><br/>
       {/* switch allows switching which components render.  */}
 
