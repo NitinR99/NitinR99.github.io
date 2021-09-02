@@ -14,7 +14,7 @@ transition={{ duration: 1 }}
     <Content>
     <FlexboxGrid justify="center" align="middle"  >
           <FlexboxGrid.Item colspan={12}>
-          <Panel header={<h3 style={{color:"#EEEEEE"}}>Contact me</h3>} bordered style={{ position: "fixed", top: "50%",  left: "50%",   transform: "translate(-50%, -50%)"}} >
+          <Panel header={<h3 style={{color:"#EEEEEE"}}>Contact me 📧</h3>} bordered style={{ position: "fixed", top: "50%",  left: "50%",   transform: "translate(-50%, -50%)"}} >
           <p>Please feel free to email me at <a style={{color: "white", textDecoration: "underline"}} href="mailto:rames11a@uwindsor.ca">rames11a@uwindsor.ca</a></p>
           </Panel>
 

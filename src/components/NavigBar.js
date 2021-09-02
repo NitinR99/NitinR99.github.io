@@ -1,4 +1,4 @@
-import React, { Component, useEffect, useState } from 'react';
+import React, { Component, useEffect, useState, componentDidMount } from 'react';
 import 'rsuite/lib/styles/index.less';
 import { Navbar, Nav, Icon, Affix, IconButton, Drawer, Button, Sidenav  } from 'rsuite';
 import { NavLink } from "react-router-dom";
@@ -13,7 +13,6 @@ const[open, setOpen]=useState(false);
    function handleResize() {
      setWindowDimension(window.innerWidth);
    }
-
    window.addEventListener("resize", handleResize);
    return () => window.removeEventListener("resize", handleResize);
  }, []);
@@ -37,17 +36,17 @@ const[open, setOpen]=useState(false);
                   <Navbar appearance="subtle" >
                     <Navbar.Body >
                       <Nav pullRight >
-                        <NavLink to="/">
-                          <Nav.Item icon={<Icon icon="home" />} >Home</Nav.Item>
+                        <NavLink to="/" >
+                          <Nav.Item icon={<Icon icon="home" />}>Home</Nav.Item>
                         </NavLink>
                         <NavLink to="/about">
-                          <Nav.Item  icon={<Icon icon="user-o" />} >About Me</Nav.Item>
+                          <Nav.Item  icon={<Icon icon="user-o" /> }>About Me</Nav.Item>
                         </NavLink>
-                        <NavLink to="/projects">
+                        <NavLink to="/projects" >
                           <Nav.Item icon={<Icon icon="project" />}>Projects</Nav.Item>
                         </NavLink>
                         <NavLink to="/contact">
-                          <Nav.Item icon={<Icon icon="envelope-o" />} >Contact Me</Nav.Item>
+                          <Nav.Item icon={<Icon icon="envelope-o" />}>Contact Me</Nav.Item>
                         </NavLink>
                       </Nav>
                     </Navbar.Body>

@@ -18,35 +18,35 @@ function AboutMe() {
                   <Divider />
                   <FlexboxGrid justify="space-between">
                     <FlexboxGrid.Item componentClass={Col} colspan={24} md={11}>
-                      <h3 >Education</h3><br/>
+                      <h3>🎓 Education</h3><br/>
                       <b >Bachelor in Computer Science with Software Engineering (Honours)</b>
                       <p >University of Windsor<br/>Major Average: 91%<br/>2018-Present</p><br/>
                     </FlexboxGrid.Item>
                     <FlexboxGrid.Item componentClass={Col} colspan={24} md={11}>
-                      <h3>Technical Skills</h3><br/>
+                      <h3>⚙️ Technical Skills</h3><br/>
                       <TagGroup>
-                        <Tag style={{backgroundColor:"black", color:"white"}}>ReactJS</Tag>
-                        <Tag style={{backgroundColor:"black", color:"white"}}>React Native</Tag>
-                        <Tag style={{backgroundColor:"black", color:"white"}}>Python</Tag>
-                        <Tag style={{backgroundColor:"black", color:"white"}}>JavaScript</Tag>
-                        <Tag style={{backgroundColor:"black", color:"white"}}>Java</Tag>
-                        <Tag style={{backgroundColor:"black", color:"white"}}>SQL</Tag>
-                        <Tag style={{backgroundColor:"black", color:"white"}}>HTML</Tag>
-                        <Tag style={{backgroundColor:"black", color:"white"}}>CSS</Tag>
-                        <Tag style={{backgroundColor:"black", color:"white"}}>Git</Tag>
-                        <Tag style={{backgroundColor:"black", color:"white"}}>Node.js</Tag>
+                        <Tag style={{backgroundColor:"black", color:"white", borderStyle: "solid", borderColor: "green"}}>ReactJS</Tag>
+                        <Tag style={{backgroundColor:"black", color:"white", borderStyle: "solid", borderColor: "green"}}>React Native</Tag>
+                        <Tag style={{backgroundColor:"black", color:"white", borderStyle: "solid", borderColor: "green"}}>Python</Tag>
+                        <Tag style={{backgroundColor:"black", color:"white", borderStyle: "solid", borderColor: "green"}}>JavaScript</Tag>
+                        <Tag style={{backgroundColor:"black", color:"white", borderStyle: "solid", borderColor: "green"}}>Java</Tag>
+                        <Tag style={{backgroundColor:"black", color:"white", borderStyle: "solid", borderColor: "green"}}>SQL</Tag>
+                        <Tag style={{backgroundColor:"black", color:"white", borderStyle: "solid", borderColor: "green"}}>HTML</Tag>
+                        <Tag style={{backgroundColor:"black", color:"white", borderStyle: "solid", borderColor: "green"}}>CSS</Tag>
+                        <Tag style={{backgroundColor:"black", color:"white", borderStyle: "solid", borderColor: "green"}}>Git</Tag>
+                        <Tag style={{backgroundColor:"black", color:"white", borderStyle: "solid", borderColor: "green"}}>Node.js</Tag>
                       </TagGroup><br/>
-                      <h3>Soft Skills</h3><br/>
+                      <h3>🤝 Soft Skills</h3><br/>
                       <TagGroup>
-                        <Tag style={{backgroundColor:"black", color:"white"}}>Teamwork</Tag>
-                        <Tag style={{backgroundColor:"black", color:"white"}}>Leadership</Tag>
-                        <Tag style={{backgroundColor:"black", color:"white"}}>Resourceful</Tag>
-                        <Tag style={{backgroundColor:"black", color:"white"}}>Open to criticism</Tag>
+                        <Tag style={{backgroundColor:"black", color:"white", borderStyle: "solid", borderColor: "green"}}>Teamwork</Tag>
+                        <Tag style={{backgroundColor:"black", color:"white", borderStyle: "solid", borderColor: "green"}}>Leadership</Tag>
+                        <Tag style={{backgroundColor:"black", color:"white", borderStyle: "solid", borderColor: "green"}}>Resourceful</Tag>
+                        <Tag style={{backgroundColor:"black", color:"white", borderStyle: "solid", borderColor: "green"}}>Open to criticism</Tag>
                       </TagGroup>
                       <br/>
                     </FlexboxGrid.Item>
                     <FlexboxGrid.Item componentClass={Col} colspan={24} md={11}>
-                    <h3>Work Experience</h3><br/>
+                    <h3>💼 Work Experience</h3><br/>
                     <b>Software Developer (CO-OP)</b>
                     <p>Geotab<br/>Sept 2021-Present</p><br/>
                     <b>Teaching Assistant</b>
@@ -57,7 +57,7 @@ function AboutMe() {
                     <p>University of Windsor - Office of Open Learning<br/>June 2020 - Sept 2020</p><br/>
                     </FlexboxGrid.Item>
                     <FlexboxGrid.Item componentClass={Col} colspan={24} md={11}>
-                    <h3>Volunteer Experience</h3><br/>
+                    <h3>🙋‍♂️ Volunteer Experience</h3><br/>
                     <b>Undergraduate Representaive</b>
                     <p>University of Windsor - School of Computer Science<br/>2018-Present</p><br/>
                     <b>Mentor</b>
@@ -68,16 +68,16 @@ function AboutMe() {
                     <p>StarterHacks 2020</p><br/>
                     </FlexboxGrid.Item>
                     <FlexboxGrid.Item componentClass={Col} colspan={24} md={11}>
-                    <h3>Hackathons</h3><br/>
+                    <h3>👨‍💻 Hackathons</h3><br/>
                     <TagGroup>
-                      <Tag style={{backgroundColor:"black", color:"white"}}>CitizenHacks 2019</Tag>
-                      <Tag style={{backgroundColor:"black", color:"white"}}>HackWestern 6</Tag>
-                      <Tag style={{backgroundColor:"black", color:"white"}}>DeltaHacks 2020</Tag>
-                      <Tag style={{backgroundColor:"black", color:"white"}}>WinHacks 2020</Tag>
+                      <Tag style={{backgroundColor:"black", color:"white", borderStyle: "solid", borderColor: "purple"}}>CitizenHacks 2019</Tag>
+                      <Tag style={{backgroundColor:"black", color:"white", borderStyle: "solid", borderColor: "purple"}}>HackWestern 6</Tag>
+                      <Tag style={{backgroundColor:"black", color:"white", borderStyle: "solid", borderColor: "purple"}}>DeltaHacks 2020</Tag>
+                      <Tag style={{backgroundColor:"black", color:"white", borderStyle: "solid", borderColor: "purple"}}>WinHacks 2020</Tag>
                     </TagGroup><br/>
                     </FlexboxGrid.Item>
                     <FlexboxGrid.Item componentClass={Col} colspan={24} md={11}>
-                    <h3>Honors & Awards</h3><br/>
+                    <h3>🏅 Honors & Awards</h3><br/>
                     <b>Dean's Honor Roll</b>
                     <p>August 2019, 2020</p><br/>
                     <b>Outstanding Academic Achievement</b>

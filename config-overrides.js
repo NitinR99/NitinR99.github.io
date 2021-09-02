@@ -9,6 +9,7 @@ module.exports = override(
         '@nav-bar-subtle-bg': '#1f2530',
         '@nav-bar-subtle-font-color': '#EEEEEE',
         '@nav-bar-subtle-hover-bg': '#2f3641',
+        '@nav-bar-subtle-active-bg': '#2f3641',
         '@nav-bar-subtle-hover-font-color': '#DDDDDD',
         '@primary-bg-color':'#1f2530',
         '@drawer-content-bg':'#1f2530',
