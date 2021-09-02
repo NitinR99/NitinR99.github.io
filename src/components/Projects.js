@@ -84,18 +84,18 @@ transition={{ duration: 1 }}
                       <p>{data.description}</p><br/>
                       {data.github != null && data.github !== "private"?
                       <IconButton
-                          style={{backgroundColor:"#1f2530", color: "#EEEEEE"}}
+                          style={{backgroundColor:"#0a1121", color: "#EEEEEE"}}
                           icon={<Icon icon="github" />}
                           href={data.github}
                           target="_blank"
                           size="lg"
                           />:null}
                           {data.github === "private"?
-                            <Tag style={{backgroundColor:"black", color:"white"}}>🚧 In development</Tag>:null
+                            <Tag style={{backgroundColor:"black", color:"white", borderStyle: "solid", borderColor: "gold"}}>🚧 Under development</Tag>:null
                           }
                           {data.website !== "" ?
                           <IconButton
-                              style={{backgroundColor:"#1f2530", color: "#EEEEEE"}}
+                              style={{backgroundColor:"#0a1121", color: "#EEEEEE"}}
                               icon={<Icon icon="globe" />}
                               href={data.website}
                               target="_blank"
@@ -127,18 +127,18 @@ transition={{ duration: 1 }}
                       <p>{data.description}</p><br/>
                       {data.github != null && data.github !== "private"?
                       <IconButton
-                          style={{backgroundColor:"#1f2530", color: "#EEEEEE"}}
+                          style={{backgroundColor:"#0a1121", color: "#EEEEEE"}}
                           icon={<Icon icon="github" />}
                           href={data.github}
                           target="_blank"
                           size="lg"
                           />:null}
                           {data.github === "private"?
-                            <Tag style={{backgroundColor:"black", color:"white"}}>🚧 In development</Tag>:null
+                            <Tag style={{backgroundColor:"black", color:"white", borderStyle: "solid", borderColor: "gold"}}>🚧 Under development</Tag>:null
                           }
                           {data.website !== "" ?
                           <IconButton
-                              style={{backgroundColor:"#1f2530", color: "#EEEEEE"}}
+                              style={{backgroundColor:"#0a1121", color: "#EEEEEE"}}
                               icon={<Icon icon="globe" />}
                               href={data.website}
                               target="_blank"
@@ -169,18 +169,18 @@ transition={{ duration: 1 }}
                       <p>{data.description}</p>
                       {data.github != null && data.github !== "private"?
                       <IconButton
-                          style={{backgroundColor:"#1f2530", color: "#EEEEEE"}}
+                          style={{backgroundColor:"#0a1121", color: "#EEEEEE"}}
                           icon={<Icon icon="github" />}
                           href={data.github}
                           target="_blank"
                           size="lg"
                           />:null}
                           {data.github === "private"?
-                            <Tag style={{backgroundColor:"black", color:"white"}}>🚧 In development</Tag>:null
+                            <Tag style={{backgroundColor:"black", color:"white", borderStyle: "solid", borderColor: "gold"}}>🚧 Under development</Tag>:null
                           }
                           {data.website !== "" ?
                           <IconButton
-                              style={{backgroundColor:"#1f2530", color: "#EEEEEE"}}
+                              style={{backgroundColor:"#0a1121", color: "#EEEEEE"}}
                               icon={<Icon icon="globe" />}
                               href={data.website}
                               target="_blank"

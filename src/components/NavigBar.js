@@ -24,7 +24,7 @@ const[open, setOpen]=useState(false);
                     <Navbar.Body >
                       <Nav pullLeft >
                         <IconButton
-                          style={{backgroundColor:"#1f2530", color: "#EEEEEE"}}
+                          style={{backgroundColor:"#0a1121", color: "#EEEEEE"}}
                           icon={<Icon icon="bars" />}
                           onClick={() => {setOpen(true)}}
                           size="lg"
