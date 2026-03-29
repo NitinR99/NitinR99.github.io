@@ -1,0 +1,45 @@
+import react from "@vitejs/plugin-react";
+import { defineConfig } from "vite";
+import svgr from "vite-plugin-svgr";
+
+/**
+ * The vite server configuration.
+ */
+export default defineConfig({
+  // The Vite server configurations.
+  base: "/",
+  server: {
+    // Open the browser once ready.
+    open: true,
+
+    // Explicitly defining the port the server should run on.
+    port: 5173,
+    host: true,
+    strictPort: true, // terminate the app if the above port is not available.
+  },
+  resolve: { tsconfigPaths: true },
+  plugins: [
+    react(),
+    svgr({
+      // svgr options: https://react-svgr.com/docs/options/
+      // Note: This is needed so we do not have to append "?react" to the svg import.
+      svgrOptions: {
+        exportType: "default",
+        ref: true,
+        svgo: false,
+        titleProp: true,
+      },
+      include: "**/*.svg",
+    }),
+    // Custom plugin to load markdown files
+    {
+      name: "markdown-loader",
+      transform(code, id) {
+        if (id.slice(-3) === ".md") {
+          // For .md files, get the raw content
+          return `export default ${JSON.stringify(code)};`;
+        }
+      },
+    },
+  ],
+});

@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "target": "ES2022", //double check this with cheffes
+    "module": "ES2022", //this is implicated from 'target' option
+    "moduleResolution": "bundler", //this is a node project, we want to use modules from node_module
+    "forceConsistentCasingInFileNames": true, //allows working on project from linux and windows
+    "allowJs": false, //to test
+    "isolatedModules": false, //warns about potential errors when compiling with babel (babel compiles file-by-file)
+    "strict": true,
+    "jsx": "react-jsx", //Compile jsx to js. Only applies to tsx files.
+    "allowSyntheticDefaultImports": true, //Needed to import from module 'react'
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true, // prevent type check in node modules
+    "noUncheckedSideEffectImports": false, // prevents errors on global imports. (ex: @fontsource/...)
+    "types": ["vite/client", "vite-plugin-svgr/client"], // add external types for typescript compiler.
+    "noEmit": true,
+    "paths": {
+      "components/*": ["./src/components/*"], // alias 'components' to 'src/components'
+      "pages/*": ["./src/pages/*"], // alias 'pages' to 'src/pages'
+      "utils/*": ["./src/utils/*"], // alias 'utils' to 'src/utils'
+      "hooks/*": ["./src/hooks/*"], // alias 'hooks' to 'src/hooks'
+      "assets/*": ["./src/assets/*"], // alias 'assets' to 'src/assets'
+      "data/*": ["./src/data/*"], // alias 'assets' to 'src/assets'
+      "md/*": ["./src/markdown/*"] // alias 'md' to 'src/markdown'
+    }
+  }
+}

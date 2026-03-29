@@ -1,0 +1,7 @@
+@font-face {
+  font-family: "Geist Variable";
+  src: url("../assets/font/Geist-VariableFont_wght.ttf");
+}
+html {
+  scroll-behavior: smooth;
+}
