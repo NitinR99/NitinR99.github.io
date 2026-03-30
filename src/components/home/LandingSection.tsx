@@ -34,7 +34,7 @@ export default function LandingSection() {
       display="flex"
       alignItems="center"
     >
-      <Grid container height="100%" gap={{ xs: 8, md: 0 }}>
+      <Grid container height="100%" gap={{ xs: 16, md: 0 }}>
         <Grid size={{ xs: 12, md: 6 }}>
           <Stack spacing={2}>
             <Typography>
@@ -57,6 +57,7 @@ export default function LandingSection() {
               {topFour.map((lang, index) => (
                 <span key={index} style={boldStyling}>
                   {lang}
+                  {index < topFour.length - 1 && ", "}
                 </span>
               ))}
               .
@@ -69,6 +70,8 @@ export default function LandingSection() {
                 variant="contained"
                 size="small"
                 startIcon={<ArticleOutlined />}
+                href="/NitinRamesh_resume.pdf"
+                target="blank"
               >
                 Resume
               </Button>

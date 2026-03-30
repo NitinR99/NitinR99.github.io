@@ -13,7 +13,12 @@ export default function ReachOutSection() {
     <Box component={"section"} sx={parentSxProps} id="lets-connect">
       <Stack paddingTop={4} gap={4}>
         <Typography variant="h2">Let's Connect</Typography>
-        <Grid container alignItems="center" justifyContent="space-between">
+        <Grid
+          container
+          alignItems="center"
+          justifyContent="space-between"
+          gap={{ xs: 4, md: 0 }}
+        >
           <Grid size={{ xs: 12, md: 8 }}>
             <Typography>
               If you'd like to know more or discuss challenging engineering
@@ -29,7 +34,6 @@ export default function ReachOutSection() {
             mt={{ xs: 2, md: 0 }}
           >
             <Button
-              size="medium"
               variant="contained"
               startIcon={<LinkedIn />}
               href={linkedInUrl}

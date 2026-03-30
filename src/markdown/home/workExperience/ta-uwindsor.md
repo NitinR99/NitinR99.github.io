@@ -7,3 +7,5 @@
 - Assisted in designing **programming exercises and test cases**, aligning with industry best practices.
 
 - Strengthened **technical communication skills** by explaining complex concepts to diverse audiences.
+
+- Contributed ~**100 hours per semester** as a full-time student, balancing teaching responsibilities with coursework.

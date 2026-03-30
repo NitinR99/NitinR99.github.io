@@ -2,9 +2,10 @@ const data = {
   firstName: "Nitin",
   lastName: "Ramesh",
   jobTitle: "Software Engineer",
+  openToRole: "Software Engineering",
   subtitle:
     "Software Engineer building fast and scalable digital products using",
-  topFour: ["React, Java, C#, PostgreSQL"],
+  topFour: ["React", "Java", "C#", "PostgreSQL"],
   workingIn: "Germany",
   linkedInUrl: "https://www.linkedin.com/in/nitin-r/",
   whatIDo: {

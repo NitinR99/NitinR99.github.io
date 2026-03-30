@@ -6,6 +6,7 @@ import LandingSection from "components/home/LandingSection";
 import ReachOutSection from "components/home/ReachOutSection";
 import VolunteeringSection from "components/home/VolunteeringSection";
 import WorkExperienceSection from "components/home/WorkExperienceSection";
+import Footer from "components/root/Footer";
 import SectionNavigator from "components/root/SectionNavigator";
 import { Section } from "components/root/SectionNavigator/SectionNavigator";
 
@@ -38,6 +39,7 @@ export default function Home() {
       <Container>
         <ReachOutSection />
       </Container>
+      <Footer />
       <SectionNavigator sections={sections} />
     </Box>
   );

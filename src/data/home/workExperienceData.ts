@@ -2,6 +2,7 @@ import olaUwindsor from "md/home/workExperience/ola-uwindsor.md";
 import sweGeotab from "md/home/workExperience/swe-geotab.md";
 import sweZnt from "md/home/workExperience/swe-znt.md";
 import taUwindsor from "md/home/workExperience/ta-uwindsor.md";
+import wdUmichigan from "md/home/workExperience/wd-umichigan.md";
 import wdUwindsor from "md/home/workExperience/wd-uwindsor.md";
 const data = [
   {
@@ -50,6 +51,18 @@ const data = [
     fromDate: "Sept 2019",
     toDate: "Apr 2023",
     responsibilities: taUwindsor,
+  },
+  {
+    jobTitle: "Web Developer",
+    isContract: true,
+    company: "University of Michigan",
+    location: "U.S.A",
+    companyLogoUrl:
+      "https://brand.umich.edu/assets/brand/style-guide/logo-guidelines/U-M_Logo-Hex.png",
+    companyWebsiteUrl: "https://umich.edu/",
+    fromDate: "Sept 2020",
+    toDate: "Oct 2020",
+    responsibilities: wdUmichigan,
   },
   {
     jobTitle: "Online Learning Assistant",
