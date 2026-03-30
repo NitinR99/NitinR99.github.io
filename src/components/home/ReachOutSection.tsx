@@ -35,6 +35,7 @@ export default function ReachOutSection() {
           >
             <Button
               variant="contained"
+              size="small"
               startIcon={<LinkedIn />}
               href={linkedInUrl}
               target="_blank"

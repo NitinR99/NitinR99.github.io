@@ -1,6 +1,5 @@
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
-import svgr from "vite-plugin-svgr";
 
 /**
  * The vite server configuration.
@@ -20,17 +19,6 @@ export default defineConfig({
   resolve: { tsconfigPaths: true },
   plugins: [
     react(),
-    svgr({
-      // svgr options: https://react-svgr.com/docs/options/
-      // Note: This is needed so we do not have to append "?react" to the svg import.
-      svgrOptions: {
-        exportType: "default",
-        ref: true,
-        svgo: false,
-        titleProp: true,
-      },
-      include: "**/*.svg",
-    }),
     // Custom plugin to load markdown files
     {
       name: "markdown-loader",

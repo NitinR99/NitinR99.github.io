@@ -14,7 +14,7 @@ import { BrowserRouter, Route, Routes } from "react-router";
  */
 export default function AppRouter() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <Box position="fixed" top={4} right={4}>
         <ThemeToggle />
       </Box>
