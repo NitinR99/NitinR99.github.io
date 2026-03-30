@@ -1,5 +1,4 @@
 import Box from "@mui/material/Box";
-import Container from "@mui/material/Container";
 import ConsoleMessage from "components/root/ConsoleMessage";
 import Footer from "components/root/Footer";
 import NotFound from "components/root/NotFound";
@@ -18,7 +17,7 @@ export default function AppRouter() {
       <Box position="fixed" top={4} right={4}>
         <ThemeToggle />
       </Box>
-      <Container sx={{ height: "100vh" }} component="main">
+      <Box sx={{ height: "100vh" }} component="main">
         <Routes>
           <Route index element={<Home />} />
           <Route path="/legal-notice" element={<LegalNotice />} />
@@ -27,7 +26,7 @@ export default function AppRouter() {
         </Routes>
         <Footer />
         <ConsoleMessage />
-      </Container>
+      </Box>
     </BrowserRouter>
   );
 }
