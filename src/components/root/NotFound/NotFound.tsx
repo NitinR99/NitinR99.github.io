@@ -15,9 +15,7 @@ export default function NotFound() {
       gap={4}
     >
       <Typography variant="h1">Uh oh! 404</Typography>
-
       <Typography color="text.secondary">Resource not found</Typography>
-
       <Button size="small" variant="contained" href="/" sx={{ mt: 2 }}>
         Go Home
       </Button>

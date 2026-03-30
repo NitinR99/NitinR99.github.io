@@ -28,6 +28,24 @@ export default function Footer() {
                 {`${jobTitle} • ${topFourJoined}`}
               </Typography>
             </Box>
+            {/* Right side links */}
+            <Stack>
+              <Typography variant="caption" component="a" href="/">
+                Home
+              </Typography>
+
+              <Typography variant="caption" component="a" href="/legal-notice">
+                Legal notice
+              </Typography>
+
+              <Typography
+                variant="caption"
+                component="a"
+                href="/data-protection"
+              >
+                Data protection
+              </Typography>
+            </Stack>
           </Stack>
           <Stack
             direction={{ xs: "column", md: "row" }}
