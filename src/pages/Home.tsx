@@ -1,4 +1,3 @@
-import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Divider from "@mui/material/Divider";
 import EducationSection from "components/home/EducationSection";
@@ -6,8 +5,6 @@ import LandingSection from "components/home/LandingSection";
 import ReachOutSection from "components/home/ReachOutSection";
 import VolunteeringSection from "components/home/VolunteeringSection";
 import WorkExperienceSection from "components/home/WorkExperienceSection";
-import ConsoleMessage from "components/root/ConsoleMessage";
-import Footer from "components/root/Footer";
 import SectionNavigator from "components/root/SectionNavigator";
 import { Section } from "components/root/SectionNavigator/SectionNavigator";
 
@@ -20,7 +17,7 @@ const sections: Section[] = [
 
 export default function Home() {
   return (
-    <Box sx={{ height: "100vh" }} component="main">
+    <>
       <Container>
         <LandingSection />
       </Container>
@@ -40,9 +37,8 @@ export default function Home() {
       <Container>
         <ReachOutSection />
       </Container>
-      <Footer />
+
       <SectionNavigator sections={sections} />
-      <ConsoleMessage />
-    </Box>
+    </>
   );
 }
