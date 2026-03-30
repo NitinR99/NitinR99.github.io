@@ -5,7 +5,7 @@ const data = {
   openToRole: "Software Engineering",
   subtitle:
     "Software Engineer building fast and scalable digital products using",
-  topFour: ["React", "Java", "C#", "PostgreSQL"],
+  topFour: ["React", "Java (Spring Boot)", "C#", "PostgreSQL"],
   workingIn: "Germany",
   linkedInUrl: "https://www.linkedin.com/in/nitin-r/",
   whatIDo: {

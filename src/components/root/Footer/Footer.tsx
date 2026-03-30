@@ -23,9 +23,7 @@ export default function Footer() {
             alignItems={{ xs: "flex-start", md: "center" }}
           >
             <Box>
-              <Typography variant="h6" fontWeight={600}>
-                {fullName}
-              </Typography>
+              <Typography variant="h5">{fullName}</Typography>
               <Typography variant="body2" color="text.secondary">
                 {`${jobTitle} • ${topFourJoined}`}
               </Typography>

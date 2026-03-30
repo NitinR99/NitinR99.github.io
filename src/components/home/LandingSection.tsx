@@ -36,7 +36,7 @@ export default function LandingSection() {
     >
       <Grid container height="100%" gap={{ xs: 16, md: 0 }}>
         <Grid size={{ xs: 12, md: 6 }}>
-          <Stack spacing={2}>
+          <Stack spacing={4}>
             <Typography>
               {jobTitle} / {currentYear}
             </Typography>
@@ -87,10 +87,10 @@ export default function LandingSection() {
             </Stack>
           </Stack>
         </Grid>
-        <Grid size={{ xs: 12, md: 6 }}>
+        <Grid size={{ xs: 12, md: 6 }} display="flex" alignItems="end">
           <Stack spacing={3}>
-            <Box>
-              <Typography variant="h3" color="secondary">
+            <Stack gap={4}>
+              <Typography variant="h2" color="secondary">
                 What I do
               </Typography>
               <Typography variant="body1">
@@ -98,19 +98,21 @@ export default function LandingSection() {
                 <br />
                 {whatIDo.subtitle}
               </Typography>
-            </Box>
-            <Box>
-              <Typography variant="h3" color="secondary">
+            </Stack>
+            <Stack gap={4}>
+              <Typography variant="h2" color="secondary">
                 My focus
               </Typography>
-              {myFocus.map((focus, index) => (
-                <Chip
-                  key={index}
-                  label={<Typography variant="body2">{focus}</Typography>}
-                  sx={{ marginBlock: 1, marginRight: 1 }}
-                />
-              ))}
-            </Box>
+              <Box>
+                {myFocus.map((focus, index) => (
+                  <Chip
+                    key={index}
+                    label={<Typography variant="body2">{focus}</Typography>}
+                    sx={{ marginBlock: 1, marginRight: 1 }}
+                  />
+                ))}
+              </Box>
+            </Stack>
           </Stack>
         </Grid>
       </Grid>
