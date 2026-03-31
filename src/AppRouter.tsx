@@ -6,14 +6,14 @@ import ThemeToggle from "components/root/ThemeToggle";
 import DataProtection from "pages/DataProtection";
 import Home from "pages/Home";
 import LegalNotice from "pages/LegalNotice";
-import { HashRouter, Route, Routes } from "react-router";
+import { BrowserRouter, Route, Routes } from "react-router";
 
 /**
  * The application router.
  */
 export default function AppRouter() {
   return (
-    <HashRouter>
+    <BrowserRouter>
       <Box position="fixed" top={4} right={4}>
         <ThemeToggle />
       </Box>
@@ -27,6 +27,6 @@ export default function AppRouter() {
         <Footer />
         <ConsoleMessage />
       </Box>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
