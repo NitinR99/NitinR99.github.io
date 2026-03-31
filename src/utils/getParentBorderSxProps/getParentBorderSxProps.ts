@@ -3,11 +3,15 @@ import { Property } from "csstype";
 
 export default function getParentBorderSxProps(
   minHeight?: Property.MinHeight,
+  noBorder?: boolean,
 ): SxProps<Theme> {
   return {
     minHeight: minHeight ?? "100vh",
     paddingInline: 4,
-    borderInline: (theme) => `1px dashed ${theme.palette.divider}`,
+    borderInline:
+      noBorder == true
+        ? undefined
+        : (theme) => `1px dashed ${theme.palette.divider}`,
     paddingBlock: 4,
   };
 }

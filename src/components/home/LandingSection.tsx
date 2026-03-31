@@ -25,7 +25,7 @@ const {
 
 export default function LandingSection() {
   const currentYear = new Date().getFullYear();
-  const parentSxProps = getParentBorderSxProps();
+  const parentSxProps = getParentBorderSxProps(undefined, true);
   return (
     <Box
       id="who-am-i"

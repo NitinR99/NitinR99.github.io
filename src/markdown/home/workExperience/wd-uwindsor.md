@@ -1,6 +1,6 @@
 **Key Highlights**
 
-- Led migration and decommissioning of legacy [IBM Lotus Domino](https://www.hcl-software.com/domino) web infrastructure, reducing technical debt and improving maintainability
+- Led the migration of legacy [IBM Lotus Domino](https://www.hcl-software.com/domino) web infrastructure, reducing technical debt and improving maintainability
 
 ---
 
