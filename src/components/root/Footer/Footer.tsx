@@ -4,6 +4,7 @@ import Divider from "@mui/material/Divider";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import landingSectionData from "data/home/landingSectionData";
+import { Link } from "react-router";
 
 const { firstName, lastName, jobTitle, topFour, workingIn, openToRole } =
   landingSectionData;
@@ -30,18 +31,18 @@ export default function Footer() {
             </Box>
             {/* Right side links */}
             <Stack>
-              <Typography variant="caption" component="a" href="/">
+              <Typography variant="caption" component={Link} to="/">
                 Home
               </Typography>
 
-              <Typography variant="caption" component="a" href="/legal-notice">
+              <Typography variant="caption" component={Link} to="/legal-notice">
                 Legal notice
               </Typography>
 
               <Typography
                 variant="caption"
-                component="a"
-                href="/data-protection"
+                component={Link}
+                to="/data-protection"
               >
                 Data protection
               </Typography>

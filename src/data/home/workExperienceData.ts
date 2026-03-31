@@ -56,7 +56,7 @@ const data = [
     jobTitle: "Web Developer",
     isContract: true,
     company: "University of Michigan",
-    location: "U.S.A",
+    location: "United States",
     companyLogoUrl:
       "https://brand.umich.edu/assets/brand/style-guide/logo-guidelines/U-M_Logo-Hex.png",
     companyWebsiteUrl: "https://umich.edu/",

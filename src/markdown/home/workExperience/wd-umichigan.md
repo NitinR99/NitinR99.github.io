@@ -1,4 +1,4 @@
-- Built a **React web application** for the University of Michigan, powering the **Flip the Script workshop** and improving participant engagement.
+- Built a [**React web application**](https://flip-the-script.web.app/) for the University of Michigan, powering the **Flip the Script workshop** and improving participant engagement.
 
 - Developed a **responsive, mobile-friendly UI**, leveraging modern React patterns for maintainable and scalable code.
 

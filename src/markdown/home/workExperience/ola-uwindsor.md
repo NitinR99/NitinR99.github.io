@@ -1,3 +1,9 @@
+**Key Highlights**
+
+- Co-authored and published [_Learning to Learn Online_](https://openlibrary.ecampusontario.ca/item-details/#/e767f0ef-13ce-4069-81e0-b89ea466cc24), an **open-access e-book** (CC BY-SA 4.0, Attribution-ShareAlike 4.0 International) guiding students in transitioning from traditional classrooms to online learning environments
+
+---
+
 - Collaborated with **cross-faculty online course development teams** to ensure high-quality online learning experiences.
 
 - Conducted **research** and contributed to the transformation of academic content for effective online delivery.

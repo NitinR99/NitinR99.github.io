@@ -1,3 +1,9 @@
+**Key Highlights**
+
+- Designed and implemented the **Audit Log** feature for [Geotab’s MyAdmin](https://support.geotab.com/mygeotab/doc/my-admin-guide) > Billing application, enabling structured, queryable activity logs that improved system transparency, debugging, and compliance
+
+---
+
 - Developed **scalable full-stack features** for a **data-intensive IoT platform** using **.NET Core**, **PostgreSQL**, and **Angular**.
 
 - Designed and implemented **RESTful APIs** for high-volume data processing and system integration.

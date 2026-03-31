@@ -13,7 +13,7 @@ export default defineConfig({
 
     // Explicitly defining the port the server should run on.
     port: 5173,
-    host: true,
+    host: "localhost",
     strictPort: true, // terminate the app if the above port is not available.
   },
   resolve: { tsconfigPaths: true },
