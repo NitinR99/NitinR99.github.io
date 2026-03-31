@@ -34,14 +34,14 @@ export default function Footer() {
                 Home
               </Typography>
 
-              <Typography variant="caption" component="a" href="/legal-notice">
+              <Typography variant="caption" component="a" href="#/legal-notice">
                 Legal notice
               </Typography>
 
               <Typography
                 variant="caption"
                 component="a"
-                href="/data-protection"
+                href="#/data-protection"
               >
                 Data protection
               </Typography>
