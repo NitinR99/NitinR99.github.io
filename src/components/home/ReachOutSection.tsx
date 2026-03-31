@@ -25,10 +25,12 @@ export default function ReachOutSection() {
               <Box
                 component="img"
                 src={abstractLiquidOne}
-                width={450}
                 height={400}
+                width={400}
                 marginBlock={5}
-                sx={{ borderRadius: (theme) => theme.shape.borderRadius }}
+                sx={{
+                  borderRadius: (theme) => theme.shape.borderRadius,
+                }}
               />
 
               <ConnectWithoutContact
