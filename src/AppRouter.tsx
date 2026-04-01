@@ -1,8 +1,8 @@
 import Box from "@mui/material/Box";
 import ConsoleMessage from "components/root/ConsoleMessage";
 import Footer from "components/root/Footer";
+import NavigationBar from "components/root/NavigationBar";
 import NotFound from "components/root/NotFound";
-import ThemeToggle from "components/root/ThemeToggle";
 import DataProtection from "pages/DataProtection";
 import Home from "pages/Home";
 import LegalNotice from "pages/LegalNotice";
@@ -14,9 +14,8 @@ import { BrowserRouter, Route, Routes } from "react-router";
 export default function AppRouter() {
   return (
     <BrowserRouter>
-      <Box position="fixed" top={4} right={4}>
-        <ThemeToggle />
-      </Box>
+      <NavigationBar />
+
       <Box sx={{ height: "100vh" }} component="main">
         <Routes>
           <Route index element={<Home />} />
