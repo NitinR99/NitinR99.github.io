@@ -25,6 +25,7 @@ export default function ReachOutSection() {
               <Box
                 component="img"
                 src={abstractLiquidOne}
+                alt="Bannner for let's connect"
                 height={400}
                 width={400}
                 marginBlock={5}
@@ -41,7 +42,7 @@ export default function ReachOutSection() {
                   transform: "translate(-50%, -50%)",
                   fontSize: 80,
                   color: (theme) => theme.palette.common.white,
-                  opacity: 0.8,
+                  opacity: 0.9,
                 }}
               />
             </Box>
