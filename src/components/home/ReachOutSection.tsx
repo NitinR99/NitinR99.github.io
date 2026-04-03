@@ -31,6 +31,7 @@ export default function ReachOutSection() {
                 marginBlock={5}
                 sx={{
                   borderRadius: (theme) => theme.shape.borderRadius,
+                  maxWidth: "100%",
                 }}
               />
 

@@ -71,6 +71,8 @@ export default function WorkExperienceCard({
                 component="a"
                 href={data.companyWebsiteUrl}
                 target="blank"
+                sx={{ textDecoration: "none" }}
+                color="text.secondary"
               >
                 {data.company}
               </Typography>

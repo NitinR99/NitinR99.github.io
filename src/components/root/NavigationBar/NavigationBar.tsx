@@ -7,10 +7,12 @@ import logoLight from "assets/favicon-light.png";
 import ThemeToggle from "../ThemeToggle";
 
 import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router";
 
 export default function NavigationBar() {
   const { mode, systemMode } = useColorScheme();
   const [opacity, setOpacity] = useState(0);
+  const { pathname } = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,20 +23,20 @@ export default function NavigationBar() {
       let value = (scrollY - start) / (end - start);
       value = Math.min(Math.max(value, 0), 1); // clamp 0–1
 
-      setOpacity(value);
+      setOpacity(pathname !== "/" ? 1 : value);
     };
 
     handleScroll();
     window.addEventListener("scroll", handleScroll);
 
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [pathname]);
 
   return (
     <>
       <Box
         sx={{
-          position: "fixed",
+          position: "sticky",
           top: 0,
           left: 0,
           width: "100%",
@@ -72,26 +74,39 @@ export default function NavigationBar() {
         }}
       >
         <Box
-          component="img"
-          src={mode === "dark" || systemMode === "dark" ? logoDark : logoLight}
-          alt="Branding of website"
-          width={40}
-          sx={{ pointerEvents: "none", userSelect: "none", opacity: opacity }}
-        />
-
-        <Typography
-          paddingInline={2}
-          variant="button"
+          component={Link}
+          to="/"
           sx={{
-            opacity: opacity,
-            transition: "opacity 0.1s linear", // keeps it smooth
-            pointerEvents: "none",
-            userSelect: "none",
+            mr: "auto",
+            display: "flex",
+            alignItems: "center",
+            textDecoration: "none", // removes underline
+            color: "inherit", // keeps typography color
           }}
         >
-          Nitin Ramesh
-        </Typography>
+          <Box
+            component="img"
+            src={
+              mode === "dark" || systemMode === "dark" ? logoDark : logoLight
+            }
+            alt="Branding of website"
+            width={40}
+            sx={{ pointerEvents: "none", userSelect: "none", opacity: opacity }}
+          />
 
+          <Typography
+            paddingInline={2}
+            variant="button"
+            sx={{
+              opacity: opacity,
+              transition: "opacity 0.1s linear", // keeps it smooth
+              pointerEvents: "none",
+              userSelect: "none",
+            }}
+          >
+            Nitin Ramesh
+          </Typography>
+        </Box>
         <Box sx={{ ml: "auto" }}>
           <ThemeToggle />
         </Box>

@@ -43,6 +43,8 @@ export default function EducationCard({ data }: EducationCardProps) {
                 component="a"
                 href={data.institutionUrl}
                 target="blank"
+                sx={{ textDecoration: "none" }}
+                color="text.secondary"
               >
                 {data.institution}
               </Typography>

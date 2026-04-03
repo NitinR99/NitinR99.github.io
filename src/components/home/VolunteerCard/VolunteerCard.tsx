@@ -43,6 +43,8 @@ export default function VolunteerCard({ data }: VolunteerCardProps) {
                 component="a"
                 href={data.organizationWebsiteUrl}
                 target="blank"
+                sx={{ textDecoration: "none" }}
+                color="text.secondary"
               >
                 {data.organization}
               </Typography>
