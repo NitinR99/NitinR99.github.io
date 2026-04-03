@@ -1,12 +1,15 @@
 import ConnectWithoutContact from "@mui/icons-material/ConnectWithoutContact";
+import Email from "@mui/icons-material/Email";
+import LinkedIn from "@mui/icons-material/LinkedIn";
 import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import abstractLiquidOne from "assets/images/abstract-liquid-1.jpg";
-import LinkedInBadge from "components/root/LinkedInBadge";
+import landingSectionData from "data/home/landingSectionData";
 import getParentBorderSxProps from "utils/getParentBorderSxProps";
-
+const { linkedInUrl, email } = landingSectionData;
 export default function ReachOutSection() {
   const parentSxProps = getParentBorderSxProps("50vh");
   return (
@@ -60,7 +63,30 @@ export default function ReachOutSection() {
               projects, feel free to reach out. I'm always open to exploring
               impactful opportunities.
             </Typography>
-            <LinkedInBadge />
+            <Stack direction="row" gap={4}>
+              <Button
+                variant="contained"
+                size="small"
+                startIcon={<LinkedIn />}
+                href={linkedInUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                fullWidth
+              >
+                Connect on LinkedIn
+              </Button>
+              <Button
+                variant="outlined"
+                size="small"
+                startIcon={<Email />}
+                href={`mailto:${email}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                fullWidth
+              >
+                Reach out via Email
+              </Button>
+            </Stack>
           </Grid>
         </Grid>
       </Stack>

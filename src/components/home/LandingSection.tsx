@@ -4,6 +4,8 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Chip from "@mui/material/Chip";
 import Grid from "@mui/material/Grid";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import landingSectionData from "data/home/landingSectionData";
@@ -17,6 +19,7 @@ const {
   jobTitle,
   subtitle,
   topFour,
+  howIThink,
   whatIDo,
   workingIn,
   myFocus,
@@ -81,6 +84,7 @@ export default function LandingSection() {
                 startIcon={<LinkedIn />}
                 href={linkedInUrl}
                 target="blank"
+                rel="noopener noreferrer"
               >
                 LinkedIn
               </Button>
@@ -112,6 +116,21 @@ export default function LandingSection() {
                   />
                 ))}
               </Box>
+            </Stack>
+            <Stack gap={4}>
+              <Typography variant="h2" color="secondary">
+                How I think
+              </Typography>
+              <List sx={{ listStyleType: "circle" }}>
+                {howIThink.map((focus, index) => (
+                  <ListItem
+                    key={index}
+                    sx={{ display: "list-item", ml: 5, pl: 0 }}
+                  >
+                    <Typography variant="body2">{focus}</Typography>
+                  </ListItem>
+                ))}
+              </List>
             </Stack>
           </Stack>
         </Grid>
