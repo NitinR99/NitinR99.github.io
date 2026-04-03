@@ -1,14 +1,12 @@
 import ConnectWithoutContact from "@mui/icons-material/ConnectWithoutContact";
-import LinkedIn from "@mui/icons-material/LinkedIn";
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import abstractLiquidOne from "assets/images/abstract-liquid-1.jpg";
-import landingSectionData from "data/home/landingSectionData";
+import LinkedInBadge from "components/root/LinkedInBadge";
 import getParentBorderSxProps from "utils/getParentBorderSxProps";
-const { linkedInUrl } = landingSectionData;
+
 export default function ReachOutSection() {
   const parentSxProps = getParentBorderSxProps("50vh");
   return (
@@ -62,16 +60,7 @@ export default function ReachOutSection() {
               projects, feel free to reach out. I'm always open to exploring
               impactful opportunities.
             </Typography>
-            <Button
-              variant="contained"
-              size="small"
-              startIcon={<LinkedIn />}
-              href={linkedInUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              LinkedIn
-            </Button>
+            <LinkedInBadge />
           </Grid>
         </Grid>
       </Stack>
