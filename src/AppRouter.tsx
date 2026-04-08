@@ -16,7 +16,7 @@ export default function AppRouter() {
     <BrowserRouter>
       <NavigationBar />
       <ScrollToTop />
-      <Box sx={{ height: "100vh" }} component="main">
+      <Box sx={{ height: "100vh", mt: 20 }} component="main">
         <Routes>
           <Route index element={<Home />} />
           <Route path="/legal-notice" element={<LegalNotice />} />
