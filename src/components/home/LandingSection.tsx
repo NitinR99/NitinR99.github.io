@@ -73,7 +73,7 @@ export default function LandingSection() {
                 variant="contained"
                 size="small"
                 startIcon={<ArticleOutlined />}
-                href="/NitinRamesh_resume.pdf"
+                href="/files/NitinRamesh_resume.pdf"
                 target="blank"
               >
                 Resume

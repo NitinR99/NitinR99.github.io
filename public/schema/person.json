@@ -1,0 +1,27 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://nitinramesh.dev/#person",
+  "name": "Nitin Ramesh",
+  "jobTitle": "Software Engineer",
+  "url": "https://nitinramesh.dev/",
+  "sameAs": ["https://www.linkedin.com/in/nitinramesh"],
+  "worksFor": {
+    "@type": "Organization",
+    "name": "znt-Richter"
+  },
+  "knowsAbout": [
+    "Full-Stack Development",
+    "React",
+    "Java",
+    "Spring Boot",
+    "C#",
+    "PostgreSQL",
+    "API Design",
+    "Scalable Systems"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "DE"
+  }
+}
