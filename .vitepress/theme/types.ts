@@ -16,6 +16,8 @@ export interface Profile {
   knowsAbout: string[];
   /** Spoken languages, e.g. { name: "German", level: "Intermediate (B1)" }. */
   languages: { name: string; level: string }[];
+  /** JSON Resume `awards` shape; also used for the JSON-LD `award`. */
+  awards: { title: string; awarder: string; summary?: string }[];
 }
 
 export interface ThemeConfig {

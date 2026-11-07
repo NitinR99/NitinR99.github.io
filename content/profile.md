@@ -22,6 +22,10 @@ languages:
     level: Native
   - name: German
     level: Intermediate (B1)
+awards:
+  - title: LEAD Gold Medallion Scholar
+    awarder: University of Windsor
+    summary: Academic excellence and leadership recognition
 siteUrl: https://nitinramesh.dev
 knowsAbout:
   - Full-Stack Development

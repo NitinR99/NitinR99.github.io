@@ -12,6 +12,8 @@ export interface Entry {
   badge?: string;
   dates?: string;
   location?: string;
+  /** Graduation year (education only); not shown on the page. */
+  graduated?: string;
   /** Markdown in the file; HTML once loaded. */
   details: string;
 }

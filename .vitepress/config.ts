@@ -1,15 +1,16 @@
-import fs from "node:fs";
 import { fileURLToPath } from "node:url";
 import { ExternalLink, FileText } from "@lucide/vue";
 import tailwindcss from "@tailwindcss/vite";
-import matter from "gray-matter";
 import { defineConfig, type HeadConfig } from "vitepress";
 import { h } from "vue";
 import { renderToString } from "vue/server-renderer";
-import type { Profile, ThemeConfig } from "./theme/types.ts";
+import { readContent, writeMachineReadable } from "./machine-readable.ts";
+import type { ThemeConfig } from "./theme/types.ts";
 
 const contentDir = fileURLToPath(new URL("../content", import.meta.url));
-const profile = matter(fs.readFileSync(`${contentDir}/profile.md`, "utf-8")).data as Profile;
+const pagesDir = fileURLToPath(new URL("../pages", import.meta.url));
+const content = readContent(contentDir, pagesDir);
+const { profile } = content;
 
 const fullName = `${profile.firstName} ${profile.lastName}`;
 const homeUrl = `${profile.siteUrl}/`;
@@ -29,11 +30,46 @@ const schema = {
       jobTitle: profile.jobTitle,
       description: profile.description,
       url: homeUrl,
+      email: `mailto:${profile.email}`,
       sameAs: [profile.linkedInUrl],
-      worksFor: { "@type": "Organization", name: profile.worksFor },
+      worksFor: {
+        "@type": "Organization",
+        name: profile.worksFor,
+        url: content.experience.find((e) => e.organization === profile.worksFor)?.website,
+      },
+      hasOccupation: {
+        "@type": "Occupation",
+        name: profile.jobTitle,
+        occupationLocation: { "@type": "Country", name: profile.workingIn },
+        skills: profile.knowsAbout.join(", "),
+      },
+      alumniOf: content.education.map((e) => ({
+        "@type": "CollegeOrUniversity",
+        name: e.organization,
+        url: e.website,
+      })),
+      award: profile.awards.map((a) => `${a.title} (${a.awarder})`),
       knowsAbout: profile.knowsAbout,
       knowsLanguage: profile.languages.map((l) => l.name),
       address: { "@type": "PostalAddress", addressCountry: profile.countryCode },
+      // Plain-text and structured résumés for agents and ATS parsers.
+      subjectOf: [
+        {
+          "@type": "DigitalDocument",
+          url: `${profile.siteUrl}/resume.md`,
+          encodingFormat: "text/markdown",
+        },
+        {
+          "@type": "DigitalDocument",
+          url: `${profile.siteUrl}/resume.json`,
+          encodingFormat: "application/json",
+        },
+        {
+          "@type": "DigitalDocument",
+          url: `${profile.siteUrl}${profile.resumeUrl}`,
+          encodingFormat: "application/pdf",
+        },
+      ],
     },
     {
       "@type": "WebSite",
@@ -63,6 +99,24 @@ const head: HeadConfig[] = [
   ["link", { rel: "icon", href: "/favicon-dark.png", media: "(prefers-color-scheme: dark)" }],
   ["link", { rel: "apple-touch-icon", href: "/apple-touch-icon.png" }],
   ["link", { rel: "manifest", href: "/site.webmanifest" }],
+  // Pointers for AI agents: LLM summary and plain-text / structured résumés.
+  [
+    "link",
+    { rel: "alternate", type: "text/markdown", href: "/llms.txt", title: "Summary for LLMs" },
+  ],
+  [
+    "link",
+    { rel: "alternate", type: "text/markdown", href: "/resume.md", title: "Résumé (Markdown)" },
+  ],
+  [
+    "link",
+    {
+      rel: "alternate",
+      type: "application/json",
+      href: "/resume.json",
+      title: "Résumé (JSON Resume)",
+    },
+  ],
   ["meta", { name: "theme-color", content: "#faf9f5" }],
   ["meta", { name: "author", content: fullName }],
   ["meta", { property: "og:site_name", content: fullName }],
@@ -139,6 +193,10 @@ export default defineConfig<ThemeConfig>({
     ];
   },
   sitemap: { hostname: profile.siteUrl },
+  // llms.txt, resume.md, resume.json, robots.txt (see machine-readable.ts).
+  buildEnd({ outDir }) {
+    writeMachineReadable(outDir, content);
+  },
   themeConfig: { profile, year: new Date().getFullYear() },
   vite: {
     plugins: [tailwindcss()],

@@ -6,6 +6,8 @@ entries:
     website: https://www.uwindsor.ca/
     logo: /logos/uwindsor-degree.png
     location: Canada
+    # Not shown on the page; used by llms.txt and the résumé files.
+    graduated: "2023"
     details: |
       - Graduated with Distinction
       - LEAD Gold Medallion Scholar 🏅 (academic excellence & leadership recognition)
