@@ -108,11 +108,6 @@ export default defineConfig<ThemeConfig>({
     },
   },
   head,
-  // A case study's `date` only orders the overview (content/case-studies.data.ts reads it
-  // from the source files), so keep it out of the page data shipped to the browser.
-  transformPageData(pageData) {
-    if (pageData.frontmatter.layout === "case-study") delete pageData.frontmatter.date;
-  },
   // Per-page tags: canonical URL plus share title/description that match <title>.
   transformHead({ pageData, title, description }) {
     if (pageData.isNotFound || pageData.relativePath === "404.md") {

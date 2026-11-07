@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import { useData } from "vitepress";
+import { useData, useRoute } from "vitepress";
 import { ArrowLeft, ArrowRight } from "@lucide/vue";
 import { data as caseStudies } from "@content/case-studies.data";
 
-const { page, frontmatter } = useData();
+const { frontmatter } = useData();
+const route = useRoute();
 
 // Look this article up in the loader data for its reading time and neighbours.
-const url = computed(() => `/${page.value.relativePath.replace(/\.md$/, "")}`);
-const index = computed(() => caseStudies.findIndex((cs) => cs.url === url.value));
+const index = computed(() => caseStudies.findIndex((cs) => cs.url === route.path));
 const current = computed(() => caseStudies[index.value]);
 // List is newest first, so the next entry is the next-older article.
 const next = computed(() => caseStudies[index.value + 1]);
@@ -67,14 +67,8 @@ const facts = computed(() => (frontmatter.value.facts ?? []) as { label: string;
 
       <div class="prose mt-12 max-w-none prose-h2:mt-14 prose-h2:text-3xl"><Content /></div>
 
-      <footer class="mt-20 flex flex-wrap justify-between gap-6 border-t pt-8 text-sm">
-        <a
-          href="/case-studies"
-          class="inline-flex items-center gap-2 text-muted-foreground transition-colors hover:text-foreground [&_svg]:size-4"
-        >
-          <ArrowLeft aria-hidden="true" /> All case studies
-        </a>
-        <a v-if="next" :href="next.url" class="group text-right">
+      <footer v-if="next" class="mt-20 flex justify-end border-t pt-8 text-sm">
+        <a :href="next.url" class="group text-right">
           <span class="eyebrow block">Next</span>
           <span
             class="mt-1 inline-flex items-center gap-2 font-serif text-lg [&_svg]:size-4 [&_svg]:transition-transform group-hover:[&_svg]:translate-x-0.5"

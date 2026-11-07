@@ -166,9 +166,6 @@
   --tw-prose-th-borders: var(--border);
   --tw-prose-td-borders: var(--border);
 }
-.prose div[class*="language-"] {
-  @apply relative;
-}
 .prose pre.shiki {
   @apply rounded-lg border text-sm leading-relaxed;
 }

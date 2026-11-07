@@ -1,13 +1,11 @@
 <script setup lang="ts">
-import { computed } from "vue";
 import { useData } from "vitepress";
 import { data as caseStudies } from "@content/case-studies.data";
 
 const { frontmatter } = useData();
 
 // Newest article leads; the rest go in the grid below.
-const featured = computed(() => caseStudies[0]);
-const rest = computed(() => caseStudies.slice(1));
+const [featured, ...rest] = caseStudies;
 </script>
 
 <!-- /case-studies: intro, a featured lead (newest), then a card grid. -->
