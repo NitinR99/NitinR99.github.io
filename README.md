@@ -21,7 +21,7 @@ npm run check      # typecheck + prettier check (also runs in CI)
 | `content/resume.data.ts`                                         | Build-time loader that reads the three files above and renders `details` |
 | `pages/index.md`                                                 | Home page copy (landing text, focus chips, "How I think", reach out)     |
 | `pages/legal-notice.md`, `pages/data-protection.md`              | Plain markdown pages                                                     |
-| `pages/public/`                                                  | Static files: favicons, logos, banner images, résumé PDF                 |
+| `pages/public/`                                                  | Static files: favicons, share image (`og-image.png`), logos, images, PDF |
 | `.vitepress/config.ts`                                           | Site config, head meta, JSON-LD                                          |
 | `.vitepress/theme/`                                              | Layouts, components, `style.css` (design tokens + shared utilities)      |
 

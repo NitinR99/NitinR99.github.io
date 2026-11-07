@@ -16,7 +16,7 @@ topFour:
   - React
   - TypeScript
   - C#/.NET
-description: React & Java (Spring Boot) engineer building scalable systems and clean architectures.
+description: Software Engineer in Germany with 3+ years building fast, scalable full-stack products in Java (Spring Boot), React, TypeScript and .NET.
 siteUrl: https://nitinramesh.dev
 knowsAbout:
   - Full-Stack Development
