@@ -12,10 +12,10 @@ workingIn: Germany
 countryCode: DE
 worksFor: znt-Richter
 topFour:
-  - React
   - Java (Spring Boot)
-  - C#
-  - PostgreSQL
+  - React
+  - TypeScript
+  - C#/.NET
 description: React & Java (Spring Boot) engineer building scalable systems and clean architectures.
 siteUrl: https://nitinramesh.dev
 knowsAbout:
@@ -23,8 +23,16 @@ knowsAbout:
   - React
   - Java
   - Spring Boot
+  - TypeScript
   - C#
+  - .NET
   - PostgreSQL
   - API Design
+  - Microservices
+  - Docker
+  - CI/CD
+  - Vulnerability Management
+  - Claude Code
+  - AI-Assisted Development
   - Scalable Systems
 ---

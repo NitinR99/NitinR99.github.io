@@ -21,7 +21,7 @@ onMounted(() =>
 
 <template>
   <NavigationBar />
-  <main class="mt-20">
+  <main>
     <NotFound v-if="page.isNotFound" />
     <HomeLayout v-else-if="frontmatter.layout === 'home'" />
     <PageLayout v-else />

@@ -8,7 +8,7 @@ entries:
     location: Canada
     details: |
       - Graduated with Distinction
-      - Recipient of the LEAD Gold Medal 🏅 (academic excellence & leadership recognition)
+      - LEAD Gold Medallion Scholar 🏅 (academic excellence & leadership recognition)
 
       **Relevant Coursework:**
 

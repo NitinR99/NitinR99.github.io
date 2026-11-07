@@ -3,7 +3,7 @@ layout: home
 title: Nitin Ramesh - Software Engineer
 titleTemplate: false
 
-subtitle: Software Engineer building fast and scalable digital products using
+subtitle: Software Engineer with 3+ years of experience building fast and scalable digital products using
 whatIDo:
   threeThings:
     - Building
@@ -13,10 +13,13 @@ whatIDo:
 myFocus:
   - Full-Stack Development
   - API Design & Development
+  - Java (Spring Boot)
   - React / TypeScript
   - Node.js
   - PostgreSQL
-  - Deployment & CI/CD
+  - Docker & CI/CD
+  - Security & CVE Triage
+  - AI-Assisted Development (Claude Code)
 howIThink:
   - Optimize for readability over cleverness
   - Measure before optimizing

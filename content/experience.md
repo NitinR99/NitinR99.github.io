@@ -8,19 +8,27 @@ entries:
     location: Germany
     logo: /logos/znt-richter.jpg
     website: https://www.znt-richter.com/en/
-    dates: Dec 2023 - Current
+    dates: Dec 2023 – Present
     details: |
-      - Designing and developing **scalable full-stack applications** using **Java (Spring Boot)** and **React/TypeScript**, following modern microservices architecture principles.
+      _On-premise manufacturing software (MES) for semiconductor and electronics industries._
 
-      - Designing and maintaining **RESTful APIs** with **OpenAPI (Swagger)** specifications, ensuring clear service contracts and system interoperability.
+      **Key Highlights**
 
-      - Contribute to the evolution of **UI architecture and component structure**, improving maintainability and enabling reuse across features and modules.
+      - Built and run the **CVE triage process** for our product: assess dependency vulnerabilities and manage justified suppressions to pass **security audits** and **release gates**.
 
-      - Implementing **automated testing (unit & integration)** to improve code quality, reduce **regressions**, and ensure **production stability**.
+      - Proactively improved how we use **Claude Code**: researched workflows, built **reusable skills**, and documented and shared best practices, now used by **30+ engineers** and saving **several hours per week** each.
 
-      - Contributing to **CI/CD pipelines** using Bitbucket and Bamboo, enabling efficient build, test, and deployment workflows.
+      ---
 
-      - Collaborating in an **Agile (Scrum) team**, participating in code reviews and driving continuous improvement.
+      - Own features **end to end** with **Java (Spring Boot)**, **React**, and **TypeScript** in a **microservices architecture**, from technical design and architecture decisions to release.
+
+      - Design and maintain **RESTful APIs** with **OpenAPI (Swagger)** contracts, consumed by the React frontend and by other teams’ services.
+
+      - **Review** teammates’ code and **mentor and onboard** new team members.
+
+      - Migrated the frontend build from **Webpack to Vite** and delivered major framework and library upgrades, speeding up CI builds, page loads, and UI responsiveness.
+
+      - Introduced **integration tests**, **frontend tests**, and new **CI pipeline stages** (Bitbucket, Bamboo) for previously untested areas; write and maintain **Dockerfiles** for local development and CI.
 
   - title: Software Engineer
     badge: Internship
@@ -28,7 +36,7 @@ entries:
     location: Canada
     logo: /logos/geotab.jpg
     website: https://www.geotab.com/
-    dates: Sept 2021 - Sept 2022
+    dates: Sep 2021 – Aug 2022
     details: |
       **Key Highlights**
 
@@ -56,7 +64,7 @@ entries:
     location: Canada
     logo: /logos/uwindsor.jpg
     website: https://www.uwindsor.ca/
-    dates: Jan 2021 - Apr 2021
+    dates: Jan 2021 – Apr 2021
     details: |
       **Key Highlights**
 
@@ -80,7 +88,7 @@ entries:
     location: Canada
     logo: /logos/uwindsor-cs.jpg
     website: https://www.uwindsor.ca/science/computerscience/
-    dates: Sept 2019 - Apr 2023
+    dates: Sep 2019 – Apr 2023
     details: |
       - Supported courses in **Java, OOP, Web Development, and Algorithms**, reinforcing core software engineering concepts.
 
@@ -100,7 +108,7 @@ entries:
     location: United States
     logo: /logos/umich.png
     website: https://umich.edu/
-    dates: Sept 2020 - Oct 2020
+    dates: Sep 2020 – Oct 2020
     details: |
       - Built a [**React web application**](https://flip-the-script.web.app/) for the University of Michigan, powering the **Flip the Script workshop** and improving participant engagement.
 
@@ -118,7 +126,7 @@ entries:
     location: Canada
     logo: /logos/uwindsor.jpg
     website: https://www.uwindsor.ca/ctl/
-    dates: Jun 2020 - Sept 2020
+    dates: Jun 2020 – Sep 2020
     details: |
       **Key Highlights**
 

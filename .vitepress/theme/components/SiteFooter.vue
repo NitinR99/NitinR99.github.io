@@ -7,24 +7,18 @@ const { profile, year } = theme.value;
 </script>
 
 <template>
-  <footer class="page-container flex flex-col gap-8 pb-4">
-    <hr />
-    <div class="flex justify-between gap-2 max-md:flex-col md:items-center">
-      <div>
-        <div>{{ site.title }}</div>
-        <div class="text-small text-muted-foreground">
-          {{ profile.jobTitle }} • {{ profile.topFour.join(" • ") }}
-        </div>
-      </div>
-      <div class="flex flex-col text-caption underline">
-        <a href="/">Home</a>
-        <a href="/legal-notice">Legal notice</a>
-        <a href="/data-protection">Data protection</a>
-      </div>
-    </div>
-    <div class="flex justify-between gap-2 text-caption text-muted-foreground max-md:flex-col">
-      <span>© {{ year }} {{ site.title }}. All rights reserved.</span>
-      <span>Based in {{ profile.workingIn }} • Open to {{ profile.openToRole }} opportunities</span>
+  <footer class="page-container">
+    <div
+      class="flex justify-between gap-x-8 gap-y-3 border-t py-10 text-sm text-subtle max-md:flex-col"
+    >
+      <p>
+        © {{ year }} {{ site.title }} · Based in {{ profile.workingIn }} · Open to
+        {{ profile.openToRole }} opportunities
+      </p>
+      <nav class="flex gap-6">
+        <a class="link hover:text-foreground" href="/legal-notice">Legal notice</a>
+        <a class="link hover:text-foreground" href="/data-protection">Data protection</a>
+      </nav>
     </div>
   </footer>
 </template>

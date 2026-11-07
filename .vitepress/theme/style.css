@@ -1,70 +1,55 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+/* Self-hosted variable fonts (woff2, split by unicode range). */
+@import "@fontsource-variable/geist";
+@import "@fontsource-variable/newsreader/opsz.css";
+@import "@fontsource-variable/newsreader/opsz-italic.css";
+
 /* Tailwind skips dot-folders, so point it at the theme explicitly. */
 @source "./";
 
 /* VitePress toggles `dark` on <html>. */
 @custom-variant dark (&:where(.dark, .dark *));
 
-@font-face {
-  font-family: "Geist Variable";
-  src: url("./assets/Geist-VariableFont_wght.ttf");
-  font-display: swap;
-}
-
-/* ---------- Colours (neutral palette) ---------- */
+/* ---------- Colours: warm neutrals + one green accent ---------- */
 :root {
-  --background: #fafafa;
-  --foreground: rgb(0 0 0 / 87%);
-  --surface: #f5f5f5;
-  --primary: #171717;
-  --primary-foreground: #fafafa;
-  --muted-foreground: rgb(0 0 0 / 60%);
-  --subtle: #737373;
-  --chip: rgb(0 0 0 / 8%);
-  --hover: rgb(0 0 0 / 4%);
-  --border: #e4e4e4;
+  --background: #faf9f5;
+  --foreground: #1f1e1c;
+  --muted-foreground: #5f5d58;
+  --subtle: #8c8a83;
+  --surface: #f1efe8;
+  --border: #e3e0d7;
+  --accent: #2f7a52;
+  --primary: #1f1e1c;
+  --primary-foreground: #faf9f5;
 }
 
 .dark {
-  --background: #0a0a0a;
-  --foreground: #fafafa;
-  --surface: #171717;
-  --primary: #f5f5f5;
-  --primary-foreground: #0a0a0a;
-  --muted-foreground: #d4d4d4;
-  --subtle: #a3a3a3;
-  --chip: rgb(255 255 255 / 16%);
-  --hover: rgb(255 255 255 / 8%);
-  --border: #333333;
+  --background: #161614;
+  --foreground: #efede6;
+  --muted-foreground: #b2afa6;
+  --subtle: #85837c;
+  --surface: #1f1f1c;
+  --border: #2f2e2a;
+  --accent: #6cc093;
+  --primary: #efede6;
+  --primary-foreground: #161614;
 }
 
 @theme inline {
-  --font-sans: "Geist Variable", system-ui, sans-serif;
-
-  --breakpoint-sm: 600px;
-  --breakpoint-md: 900px;
-
-  --text-display: 52.5px;
-  --text-display--line-height: 1.167;
-  --text-title: 28px;
-  --text-title--line-height: 1.2;
-  --text-small: 12.6px;
-  --text-small--line-height: 1.43;
-  --text-caption: 11.9px;
-  --text-caption--line-height: 1.66;
+  --font-sans: "Geist Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Newsreader Variable", ui-serif, Georgia, serif;
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-surface: var(--surface);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
   --color-muted-foreground: var(--muted-foreground);
   --color-subtle: var(--subtle);
-  --color-chip: var(--chip);
-  --color-hover: var(--hover);
+  --color-surface: var(--surface);
   --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
 }
 
 @layer base {
@@ -77,13 +62,21 @@
     scrollbar-width: thin;
   }
   html {
-    @apply scroll-smooth scroll-pt-20 scheme-light dark:scheme-dark;
+    @apply scroll-smooth scroll-pt-24 scheme-light dark:scheme-dark;
   }
   body {
-    @apply bg-background font-sans text-sm leading-normal text-foreground;
+    @apply bg-background font-sans text-base leading-relaxed text-foreground antialiased;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-serif font-normal tracking-tight text-balance;
   }
   ::selection {
-    @apply bg-foreground text-background;
+    @apply bg-accent/25;
+  }
+  :focus-visible {
+    @apply rounded-sm outline-2 outline-offset-2 outline-accent;
   }
 
   /* Animate <details> open/close where supported; elsewhere it just snaps. */
@@ -91,50 +84,70 @@
     height: 0;
     overflow: clip;
     transition:
-      height 0.25s ease,
-      content-visibility 0.25s allow-discrete;
+      height 0.3s ease,
+      content-visibility 0.3s allow-discrete;
   }
   details[open]::details-content {
     height: auto;
   }
 }
 
+/* Markdown (résumé details, legal pages) follows the site tokens in both themes. */
+.prose {
+  --tw-prose-body: var(--muted-foreground);
+  --tw-prose-headings: var(--foreground);
+  --tw-prose-bold: var(--foreground);
+  --tw-prose-links: var(--foreground);
+  --tw-prose-bullets: var(--subtle);
+  --tw-prose-counters: var(--subtle);
+  --tw-prose-hr: var(--border);
+  --tw-prose-quotes: var(--foreground);
+  --tw-prose-quote-borders: var(--border);
+  --tw-prose-code: var(--foreground);
+}
+.prose :where(h1, h2, h3, h4) {
+  @apply font-serif font-normal tracking-tight;
+}
+
 /* ---------- Building blocks ---------- */
 @utility page-container {
-  @apply mx-auto max-w-[1200px] px-3 max-sm:px-2;
+  @apply mx-auto w-full max-w-[1120px] px-6 max-sm:px-4;
 }
 
 @utility btn {
-  @apply inline-flex h-8 cursor-pointer items-center justify-center gap-2 rounded-lg px-3 text-[13px] font-medium whitespace-nowrap transition-colors [&_svg]:size-4.5;
+  @apply inline-flex h-10 cursor-pointer items-center justify-center gap-2 rounded-full px-5 text-sm font-medium whitespace-nowrap transition-colors [&_svg]:size-4;
 }
 @utility btn-primary {
-  @apply bg-primary text-primary-foreground hover:bg-primary/90;
+  @apply bg-primary text-primary-foreground hover:bg-primary/85;
 }
 @utility btn-outline {
-  @apply border border-primary/50 hover:bg-hover;
+  @apply border border-foreground/20 hover:border-foreground/50;
 }
 @utility btn-icon {
-  @apply inline-flex size-10 shrink-0 cursor-pointer items-center justify-center rounded-full transition-colors hover:bg-hover [&_svg]:size-6;
+  @apply inline-flex size-9 shrink-0 cursor-pointer items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-surface hover:text-foreground [&_svg]:size-[18px];
 }
 
-@utility chip {
-  @apply inline-flex h-6 items-center rounded-full bg-chip px-2 text-small;
-}
-@utility chip-outline {
-  @apply border bg-transparent;
+/* Text link with an underline that appears on hover. */
+@utility link {
+  @apply underline decoration-transparent underline-offset-4 transition-colors hover:decoration-current;
 }
 
-/* Fades an element in between 20vh and 50vh of page scroll. Browsers without
-   scroll-driven animations (Firefox today) simply show it. */
-@keyframes fade-in {
+/* Small uppercase label above headings. */
+@utility eyebrow {
+  @apply text-xs font-medium tracking-[0.12em] text-subtle uppercase;
+}
+
+/* Header hairline appears once the page scrolls. Without scroll-driven
+   animations (Firefox today) the line is simply always shown. */
+@keyframes hairline-in {
   from {
-    opacity: 0;
+    border-color: transparent;
   }
 }
-@utility fade-in-on-scroll {
+@utility border-on-scroll {
   @supports (animation-timeline: scroll()) {
-    animation: fade-in linear both;
+    animation: hairline-in linear both;
     animation-timeline: scroll(root);
-    animation-range: 20vh 50vh;
+    animation-range: 0 64px;
   }
 }

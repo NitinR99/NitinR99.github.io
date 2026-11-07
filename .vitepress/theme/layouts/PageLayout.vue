@@ -1,5 +1,5 @@
 <template>
-  <div class="page-container prose prose-sm prose-neutral dark:prose-invert">
-    <Content />
-  </div>
+  <article class="page-container py-20">
+    <div class="prose mx-auto max-w-[68ch]"><Content /></div>
+  </article>
 </template>
