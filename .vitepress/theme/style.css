@@ -1,0 +1,140 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* Tailwind skips dot-folders, so point it at the theme explicitly. */
+@source "./";
+
+/* VitePress toggles `dark` on <html>. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@font-face {
+  font-family: "Geist Variable";
+  src: url("./assets/Geist-VariableFont_wght.ttf");
+  font-display: swap;
+}
+
+/* ---------- Colours (neutral palette) ---------- */
+:root {
+  --background: #fafafa;
+  --foreground: rgb(0 0 0 / 87%);
+  --surface: #f5f5f5;
+  --primary: #171717;
+  --primary-foreground: #fafafa;
+  --muted-foreground: rgb(0 0 0 / 60%);
+  --subtle: #737373;
+  --chip: rgb(0 0 0 / 8%);
+  --hover: rgb(0 0 0 / 4%);
+  --border: #e4e4e4;
+}
+
+.dark {
+  --background: #0a0a0a;
+  --foreground: #fafafa;
+  --surface: #171717;
+  --primary: #f5f5f5;
+  --primary-foreground: #0a0a0a;
+  --muted-foreground: #d4d4d4;
+  --subtle: #a3a3a3;
+  --chip: rgb(255 255 255 / 16%);
+  --hover: rgb(255 255 255 / 8%);
+  --border: #333333;
+}
+
+@theme inline {
+  --font-sans: "Geist Variable", system-ui, sans-serif;
+
+  --breakpoint-sm: 600px;
+  --breakpoint-md: 900px;
+
+  --text-display: 52.5px;
+  --text-display--line-height: 1.167;
+  --text-title: 28px;
+  --text-title--line-height: 1.2;
+  --text-small: 12.6px;
+  --text-small--line-height: 1.43;
+  --text-caption: 11.9px;
+  --text-caption--line-height: 1.66;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-subtle: var(--subtle);
+  --color-chip: var(--chip);
+  --color-hover: var(--hover);
+  --color-border: var(--border);
+}
+
+@layer base {
+  :root {
+    interpolate-size: allow-keywords;
+  }
+  * {
+    @apply border-border;
+    scrollbar-color: var(--subtle) transparent;
+    scrollbar-width: thin;
+  }
+  html {
+    @apply scroll-smooth scroll-pt-20 scheme-light dark:scheme-dark;
+  }
+  body {
+    @apply bg-background font-sans text-sm leading-normal text-foreground;
+  }
+  ::selection {
+    @apply bg-foreground text-background;
+  }
+
+  /* Animate <details> open/close where supported; elsewhere it just snaps. */
+  details::details-content {
+    height: 0;
+    overflow: clip;
+    transition:
+      height 0.25s ease,
+      content-visibility 0.25s allow-discrete;
+  }
+  details[open]::details-content {
+    height: auto;
+  }
+}
+
+/* ---------- Building blocks ---------- */
+@utility page-container {
+  @apply mx-auto max-w-[1200px] px-3 max-sm:px-2;
+}
+
+@utility btn {
+  @apply inline-flex h-8 cursor-pointer items-center justify-center gap-2 rounded-lg px-3 text-[13px] font-medium whitespace-nowrap transition-colors [&_svg]:size-4.5;
+}
+@utility btn-primary {
+  @apply bg-primary text-primary-foreground hover:bg-primary/90;
+}
+@utility btn-outline {
+  @apply border border-primary/50 hover:bg-hover;
+}
+@utility btn-icon {
+  @apply inline-flex size-10 shrink-0 cursor-pointer items-center justify-center rounded-full transition-colors hover:bg-hover [&_svg]:size-6;
+}
+
+@utility chip {
+  @apply inline-flex h-6 items-center rounded-full bg-chip px-2 text-small;
+}
+@utility chip-outline {
+  @apply border bg-transparent;
+}
+
+/* Fades an element in between 20vh and 50vh of page scroll. Browsers without
+   scroll-driven animations (Firefox today) simply show it. */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+@utility fade-in-on-scroll {
+  @supports (animation-timeline: scroll()) {
+    animation: fade-in linear both;
+    animation-timeline: scroll(root);
+    animation-range: 20vh 50vh;
+  }
+}
