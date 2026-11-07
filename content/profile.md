@@ -19,8 +19,10 @@ topFour:
 description: Software Engineer in Germany who owns features end to end, building fast, scalable full-stack products with Java (Spring Boot), React, TypeScript and .NET.
 languages:
   - name: English
+    code: en
     level: Native
   - name: German
+    code: de
     level: Intermediate (B1)
 awards:
   - title: LEAD Gold Medallion Scholar

@@ -5,6 +5,7 @@ import { defineConfig, type HeadConfig } from "vitepress";
 import { h } from "vue";
 import { renderToString } from "vue/server-renderer";
 import { readContent, writeMachineReadable } from "./machine-readable.ts";
+import { buildSchema } from "./schema.ts";
 import type { ThemeConfig } from "./theme/types.ts";
 
 const contentDir = fileURLToPath(new URL("../content", import.meta.url));
@@ -13,82 +14,12 @@ const content = readContent(contentDir, pagesDir);
 const { profile } = content;
 
 const fullName = `${profile.firstName} ${profile.lastName}`;
-const homeUrl = `${profile.siteUrl}/`;
-const ogTitle = `${fullName} – ${profile.jobTitle}`;
 // 1200×630 share card, generated from the site's fonts and colours.
 const ogImage = `${profile.siteUrl}/og-image.png`;
 const ogImageAlt = `${fullName}, ${profile.jobTitle} in ${profile.workingIn}`;
 
-// Person + WebSite (gives Google a site name) + ProfilePage, linked by @id.
-const schema = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Person",
-      "@id": `${homeUrl}#person`,
-      name: fullName,
-      jobTitle: profile.jobTitle,
-      description: profile.description,
-      url: homeUrl,
-      email: `mailto:${profile.email}`,
-      sameAs: [profile.linkedInUrl],
-      worksFor: {
-        "@type": "Organization",
-        name: profile.worksFor,
-        url: content.experience.find((e) => e.organization === profile.worksFor)?.website,
-      },
-      hasOccupation: {
-        "@type": "Occupation",
-        name: profile.jobTitle,
-        occupationLocation: { "@type": "Country", name: profile.workingIn },
-        skills: profile.knowsAbout.join(", "),
-      },
-      alumniOf: content.education.map((e) => ({
-        "@type": "CollegeOrUniversity",
-        name: e.organization,
-        url: e.website,
-      })),
-      award: profile.awards.map((a) => `${a.title} (${a.awarder})`),
-      knowsAbout: profile.knowsAbout,
-      knowsLanguage: profile.languages.map((l) => l.name),
-      address: { "@type": "PostalAddress", addressCountry: profile.countryCode },
-      // Plain-text and structured résumés for agents and ATS parsers.
-      subjectOf: [
-        {
-          "@type": "DigitalDocument",
-          url: `${profile.siteUrl}/resume.md`,
-          encodingFormat: "text/markdown",
-        },
-        {
-          "@type": "DigitalDocument",
-          url: `${profile.siteUrl}/resume.json`,
-          encodingFormat: "application/json",
-        },
-        {
-          "@type": "DigitalDocument",
-          url: `${profile.siteUrl}${profile.resumeUrl}`,
-          encodingFormat: "application/pdf",
-        },
-      ],
-    },
-    {
-      "@type": "WebSite",
-      "@id": `${homeUrl}#website`,
-      name: fullName,
-      alternateName: new URL(profile.siteUrl).hostname,
-      url: homeUrl,
-      publisher: { "@id": `${homeUrl}#person` },
-    },
-    {
-      "@type": "ProfilePage",
-      "@id": `${homeUrl}#profilepage`,
-      url: homeUrl,
-      name: ogTitle,
-      isPartOf: { "@id": `${homeUrl}#website` },
-      mainEntity: { "@id": `${homeUrl}#person` },
-    },
-  ],
-};
+// Person + WebSite (gives Google a site name) + ProfilePage; see schema.ts.
+const schema = buildSchema(content);
 
 const head: HeadConfig[] = [
   ["link", { rel: "icon", href: "/favicon.ico", sizes: "16x16 32x32 48x48" }],

@@ -14,8 +14,8 @@ export interface Profile {
   description: string;
   siteUrl: string;
   knowsAbout: string[];
-  /** Spoken languages, e.g. { name: "German", level: "Intermediate (B1)" }. */
-  languages: { name: string; level: string }[];
+  /** Spoken languages, e.g. { name: "German", code: "de" (BCP 47), level: "Intermediate (B1)" }. */
+  languages: { name: string; code: string; level: string }[];
   /** JSON Resume `awards` shape; also used for the JSON-LD `award`. */
   awards: { title: string; awarder: string; summary?: string }[];
 }

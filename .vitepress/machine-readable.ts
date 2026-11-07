@@ -83,7 +83,7 @@ function isoMonth(s?: string) {
   if (!m) return undefined;
   return `${m[2]}-${String(months.indexOf(m[1]) + 1).padStart(2, "0")}`;
 }
-const splitDates = (dates?: string) => {
+export const splitDates = (dates?: string) => {
   const [start, end] = (dates ?? "").split(/\s+[–-]\s+/);
   return { startDate: isoMonth(start), endDate: isoMonth(end) };
 };
