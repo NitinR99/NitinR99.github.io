@@ -16,7 +16,7 @@ topFour:
   - React
   - TypeScript
   - C#/.NET
-description: Software Engineer in Germany with 3+ years building fast, scalable full-stack products in Java (Spring Boot), React, TypeScript and .NET.
+description: Software Engineer in Germany who owns features end to end, building fast, scalable full-stack products with Java (Spring Boot), React, TypeScript and .NET.
 languages:
   - name: English
     level: Native

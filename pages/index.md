@@ -3,7 +3,7 @@ layout: home
 title: Nitin Ramesh – Software Engineer
 titleTemplate: false
 
-subtitle: Software Engineer with 3+ years of experience building fast and scalable digital products using
+subtitle: Software Engineer who owns features end to end, from architecture to release, building fast, scalable products with
 whatIDo:
   threeThings:
     - Building
