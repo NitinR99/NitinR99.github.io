@@ -157,3 +157,28 @@
 .new-tab-icon {
   @apply ml-1 inline-flex align-[-0.1em] text-subtle [.btn_&]:ml-0 [.btn_&]:text-current [&_svg]:size-[0.85em];
 }
+
+/* Code blocks (case studies). VitePress highlights with Shiki and writes both
+   themes' colours as --shiki-light / --shiki-dark; pick one per theme. */
+.prose {
+  --tw-prose-pre-bg: var(--surface);
+  --tw-prose-pre-code: var(--foreground);
+  --tw-prose-th-borders: var(--border);
+  --tw-prose-td-borders: var(--border);
+}
+.prose div[class*="language-"] {
+  @apply relative;
+}
+.prose pre.shiki {
+  @apply rounded-lg border text-sm leading-relaxed;
+}
+.shiki span {
+  color: var(--shiki-light);
+}
+.dark .shiki span {
+  color: var(--shiki-dark);
+}
+/* Default-theme extras with no styles in this theme. */
+.prose div[class*="language-"] > :is(button.copy, span.lang) {
+  @apply hidden;
+}
