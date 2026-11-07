@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useData } from "vitepress";
-import { ArrowUpRight, FileText } from "@lucide/vue";
+import NewTabIcon from "./NewTabIcon.vue";
 import type { HomeFrontmatter, ThemeConfig } from "../types";
 
 const { theme, frontmatter } = useData<ThemeConfig>();
@@ -34,10 +34,10 @@ const stack = profile.topFour;
 
     <div class="mt-10 flex flex-wrap gap-3">
       <a class="btn btn-primary" :href="profile.resumeUrl" target="_blank">
-        <FileText /> View resume
+        View resume <NewTabIcon pdf />
       </a>
       <a class="btn btn-outline" :href="profile.linkedInUrl" target="_blank" rel="noopener">
-        LinkedIn <ArrowUpRight />
+        LinkedIn <NewTabIcon />
       </a>
     </div>
   </section>

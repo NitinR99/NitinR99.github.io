@@ -1,9 +1,19 @@
 <script setup lang="ts">
+import { computed, onMounted, ref } from "vue";
 import { useData } from "vitepress";
 import { Moon, Sun } from "@lucide/vue";
 import type { ThemeConfig } from "../types";
+import NewTabIcon from "./NewTabIcon.vue";
 
 const { site, theme, isDark } = useData<ThemeConfig>();
+
+// The theme is only known in the browser, so the prerendered HTML gets a neutral
+// label and the real one ("Switch to …") is filled in after hydration.
+const mounted = ref(false);
+onMounted(() => (mounted.value = true));
+const toggleLabel = computed(() =>
+  mounted.value ? `Switch to ${isDark.value ? "light" : "dark"} theme` : "Toggle theme",
+);
 
 const links = [
   { href: "/#work", label: "Work" },
@@ -30,12 +40,12 @@ const links = [
           target="_blank"
           class="rounded-full px-3 py-1.5 text-muted-foreground transition-colors hover:text-foreground"
         >
-          Resume
+          Resume <NewTabIcon pdf />
         </a>
         <button
           class="btn-icon"
-          title="Toggle dark mode"
-          aria-label="Toggle dark mode"
+          :title="toggleLabel"
+          :aria-label="toggleLabel"
           @click="isDark = !isDark"
         >
           <!-- Both icons render; CSS shows the right one so static HTML fits either theme. -->

@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { useData } from "vitepress";
-import { ArrowUpRight } from "@lucide/vue";
+import { Mail } from "@lucide/vue";
 import { data as resume } from "@content/resume.data";
 import EntryItem from "../components/EntryItem.vue";
+import NewTabIcon from "../components/NewTabIcon.vue";
 import HomeHero from "../components/HomeHero.vue";
 import PageSection from "../components/PageSection.vue";
 import type { HomeFrontmatter, ThemeConfig } from "../types";
@@ -71,6 +72,15 @@ const fm = frontmatter.value as HomeFrontmatter;
     <EntryItem v-for="(entry, i) in resume.volunteering" :key="i" :entry="entry" />
   </PageSection>
 
+  <PageSection id="languages" title="Languages">
+    <ul class="grid gap-8 sm:grid-cols-2">
+      <li v-for="language in profile.languages" :key="language.name">
+        <p class="font-serif text-3xl leading-tight">{{ language.name }}</p>
+        <p class="mt-1 text-muted-foreground">{{ language.level }}</p>
+      </li>
+    </ul>
+  </PageSection>
+
   <section id="contact" class="page-container">
     <!-- Text and image share top and bottom edges: heading at the top, links at the bottom. -->
     <div class="grid gap-12 border-t py-24 md:grid-cols-[7fr_5fr] md:py-32">
@@ -80,7 +90,7 @@ const fm = frontmatter.value as HomeFrontmatter;
           <p class="max-w-[52ch] text-lg text-muted-foreground">{{ fm.reachOut }}</p>
           <div class="mt-10 flex flex-wrap gap-x-10 gap-y-4 font-serif text-2xl">
             <a class="link inline-flex items-center gap-1" :href="`mailto:${profile.email}`">
-              {{ profile.email }} <ArrowUpRight class="size-5 text-subtle" />
+              {{ profile.email }} <Mail class="size-5 text-subtle" />
             </a>
             <a
               class="link inline-flex items-center gap-1"
@@ -88,7 +98,7 @@ const fm = frontmatter.value as HomeFrontmatter;
               target="_blank"
               rel="noopener"
             >
-              LinkedIn <ArrowUpRight class="size-5 text-subtle" />
+              LinkedIn <NewTabIcon />
             </a>
           </div>
         </div>

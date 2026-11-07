@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { Plus } from "@lucide/vue";
 import type { Entry } from "@content/resume.data";
+import NewTabIcon from "./NewTabIcon.vue";
 
 defineProps<{ entry: Entry; open?: boolean }>();
 </script>
@@ -29,7 +30,7 @@ defineProps<{ entry: Entry; open?: boolean }>();
             loading="lazy"
           />
           <a class="link" :href="entry.website" target="_blank" rel="noopener">
-            {{ entry.organization }}
+            {{ entry.organization }}<NewTabIcon />
           </a>
           <template v-if="entry.location"
             ><span aria-hidden="true">·</span>{{ entry.location }}</template

@@ -17,6 +17,11 @@ topFour:
   - TypeScript
   - C#/.NET
 description: Software Engineer in Germany with 3+ years building fast, scalable full-stack products in Java (Spring Boot), React, TypeScript and .NET.
+languages:
+  - name: English
+    level: Native
+  - name: German
+    level: Intermediate (B1)
 siteUrl: https://nitinramesh.dev
 knowsAbout:
   - Full-Stack Development

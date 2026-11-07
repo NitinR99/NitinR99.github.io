@@ -14,6 +14,8 @@ export interface Profile {
   description: string;
   siteUrl: string;
   knowsAbout: string[];
+  /** Spoken languages, e.g. { name: "German", level: "Intermediate (B1)" }. */
+  languages: { name: string; level: string }[];
 }
 
 export interface ThemeConfig {

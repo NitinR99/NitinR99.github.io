@@ -1,8 +1,11 @@
 import fs from "node:fs";
 import { fileURLToPath } from "node:url";
+import { ExternalLink, FileText } from "@lucide/vue";
 import tailwindcss from "@tailwindcss/vite";
 import matter from "gray-matter";
 import { defineConfig, type HeadConfig } from "vitepress";
+import { h } from "vue";
+import { renderToString } from "vue/server-renderer";
 import type { Profile, ThemeConfig } from "./theme/types.ts";
 
 const contentDir = fileURLToPath(new URL("../content", import.meta.url));
@@ -29,6 +32,7 @@ const schema = {
       sameAs: [profile.linkedInUrl],
       worksFor: { "@type": "Organization", name: profile.worksFor },
       knowsAbout: profile.knowsAbout,
+      knowsLanguage: profile.languages.map((l) => l.name),
       address: { "@type": "PostalAddress", addressCountry: profile.countryCode },
     },
     {
@@ -81,12 +85,43 @@ const head: HeadConfig[] = [
 const pageUrl = (relativePath: string) =>
   `${profile.siteUrl}/${relativePath.replace(/(^|\/)index\.md$/, "$1").replace(/\.md$/, "")}`;
 
+// Markdown links that open a new tab (résumé details, legal pages) get the same
+// Lucide icon + screen-reader text as NewTabIcon.vue, rendered once at build time.
+const iconHtml = async (icon: typeof ExternalLink, label: string) =>
+  `<span class="new-tab-icon">${await renderToString(h(icon, { "aria-hidden": "true" }))}` +
+  `<span class="sr-only"> ${label}</span></span>`;
+const newTabIcons = {
+  link: await iconHtml(ExternalLink, "(opens in a new tab)"),
+  pdf: await iconHtml(FileText, "(PDF, opens in a new tab)"),
+};
+
 export default defineConfig<ThemeConfig>({
   srcDir: "pages",
   lang: "en",
   title: fullName,
   description: profile.description,
   cleanUrls: true,
+  markdown: {
+    config(md) {
+      const renderClose =
+        md.renderer.rules.link_close ??
+        ((tokens, i, opts, _env, self) => self.renderToken(tokens, i, opts));
+      md.renderer.rules.link_close = (tokens, i, opts, env, self) => {
+        // VitePress has already set target="_blank" on external links' link_open.
+        let j = i - 1;
+        while (j >= 0 && !(tokens[j].type === "link_open" && tokens[j].level === tokens[i].level))
+          j--;
+        const open = tokens[j];
+        const icon =
+          open?.attrGet("target") === "_blank"
+            ? open.attrGet("href")?.endsWith(".pdf")
+              ? newTabIcons.pdf
+              : newTabIcons.link
+            : "";
+        return icon + renderClose(tokens, i, opts, env, self);
+      };
+    },
+  },
   head,
   // Per-page tags: canonical URL plus share title/description that match <title>.
   transformHead({ pageData, title, description }) {

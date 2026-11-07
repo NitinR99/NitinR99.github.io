@@ -151,3 +151,9 @@
     animation-range: 0 64px;
   }
 }
+
+/* Icon added after links that open a new tab (NewTabIcon.vue, and markdown links
+   via the plugin in config.ts). */
+.new-tab-icon {
+  @apply ml-1 inline-flex align-[-0.1em] text-subtle [.btn_&]:ml-0 [.btn_&]:text-current [&_svg]:size-[0.85em];
+}
