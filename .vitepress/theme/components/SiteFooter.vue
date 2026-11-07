@@ -17,7 +17,7 @@ const { profile, year } = theme.value;
       </p>
       <nav class="flex gap-6">
         <a class="link hover:text-foreground" href="/legal-notice">Legal notice</a>
-        <a class="link hover:text-foreground" href="/data-protection">Data protection</a>
+        <a class="link hover:text-foreground" href="/data-protection">Privacy policy</a>
       </nav>
     </div>
   </footer>
