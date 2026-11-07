@@ -22,3 +22,14 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# VitePress
+.vitepress/cache
+.vitepress/dist
+
+# Claude Code (local instructions and settings)
+CLAUDE.md
+CLAUDE.local.md
+**/CLAUDE.md
+.claude/
+.mcp.json

@@ -1,0 +1,4 @@
+# Content is hand-written markdown; keep its formatting as authored.
+*.md
+package-lock.json
+pages/public
