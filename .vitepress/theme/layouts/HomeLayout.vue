@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { computed } from "vue";
 import { useData } from "vitepress";
 import { Mail } from "@lucide/vue";
 import { data as resume } from "@content/resume.data";
@@ -10,7 +11,8 @@ import type { HomeFrontmatter, ThemeConfig } from "../types";
 
 const { theme, frontmatter } = useData<ThemeConfig>();
 const { profile } = theme.value;
-const fm = frontmatter.value as HomeFrontmatter;
+// computed, not a one-off copy, so frontmatter edits in index.md hot-reload.
+const fm = computed(() => frontmatter.value as HomeFrontmatter);
 </script>
 
 <template>

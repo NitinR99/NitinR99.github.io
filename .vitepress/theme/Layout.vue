@@ -3,6 +3,8 @@ import { onMounted } from "vue";
 import { useData } from "vitepress";
 import NavigationBar from "./components/NavigationBar.vue";
 import SiteFooter from "./components/SiteFooter.vue";
+import CaseStudiesLayout from "./layouts/CaseStudiesLayout.vue";
+import CaseStudyLayout from "./layouts/CaseStudyLayout.vue";
 import HomeLayout from "./layouts/HomeLayout.vue";
 import NotFound from "./layouts/NotFound.vue";
 import PageLayout from "./layouts/PageLayout.vue";
@@ -24,6 +26,8 @@ onMounted(() =>
   <main>
     <NotFound v-if="page.isNotFound" />
     <HomeLayout v-else-if="frontmatter.layout === 'home'" />
+    <CaseStudiesLayout v-else-if="frontmatter.layout === 'case-studies'" />
+    <CaseStudyLayout v-else-if="frontmatter.layout === 'case-study'" />
     <PageLayout v-else />
     <SiteFooter />
   </main>

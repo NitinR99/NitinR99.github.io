@@ -14,7 +14,7 @@ entries:
 
       **Key Highlights**
 
-      - Built and run the **CVE triage process** for our product: assess dependency vulnerabilities and manage justified suppressions to pass **security audits** and **release gates**.
+      - Reworked our **CVE triage process** for assessing dependency vulnerabilities and justifying suppressions, to pass **security audits** and **release gates**.
 
       - Proactively improved how we use **Claude Code**: researched workflows, built **reusable skills**, and documented and shared best practices, now used by **30+ engineers** and saving **several hours per week** each.
 
