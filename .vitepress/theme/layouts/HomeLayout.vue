@@ -58,15 +58,6 @@ const fm = computed(() => frontmatter.value as HomeFrontmatter);
   </PageSection>
 
   <PageSection id="education" title="Education">
-    <!-- Image + entry read as one card: same width, image directly above its caption. -->
-    <img
-      class="mb-2 aspect-[16/7] w-full rounded-lg object-cover max-sm:aspect-[16/9]"
-      src="/images/abstract-liquid-2.jpg"
-      alt=""
-      width="1800"
-      height="1200"
-      loading="lazy"
-    />
     <EntryItem v-for="(entry, i) in resume.education" :key="i" :entry="entry" />
   </PageSection>
 
@@ -83,36 +74,24 @@ const fm = computed(() => frontmatter.value as HomeFrontmatter);
     </ul>
   </PageSection>
 
-  <section id="contact" class="page-container">
-    <!-- Text and image share top and bottom edges: heading at the top, links at the bottom. -->
-    <div class="grid gap-12 border-t py-24 md:grid-cols-[7fr_5fr] md:py-32">
-      <div class="flex flex-col justify-between gap-10">
+  <!-- Filled closing panel, styled like the case studies empty state. -->
+  <section id="contact" class="page-container pb-16 md:pb-24">
+    <!-- Message on the left, actions on the right, aligned to the bottom of the text. -->
+    <div
+      class="grid gap-10 rounded-lg border bg-surface p-8 max-sm:p-6 md:grid-cols-[1fr_auto] md:items-end md:p-12"
+    >
+      <div>
         <h2 class="text-[clamp(2.75rem,7vw,5.5rem)] leading-none">Let's connect.</h2>
-        <div>
-          <p class="max-w-[52ch] text-lg text-muted-foreground">{{ fm.reachOut }}</p>
-          <div class="mt-10 flex flex-wrap gap-x-10 gap-y-4 font-serif text-2xl">
-            <a class="link inline-flex items-center gap-1" :href="`mailto:${profile.email}`">
-              {{ profile.email }} <Mail class="size-5 text-subtle" />
-            </a>
-            <a
-              class="link inline-flex items-center gap-1"
-              :href="profile.linkedInUrl"
-              target="_blank"
-              rel="noopener"
-            >
-              LinkedIn <NewTabIcon />
-            </a>
-          </div>
-        </div>
+        <p class="mt-6 max-w-[52ch] text-lg text-muted-foreground">{{ fm.reachOut }}</p>
       </div>
-      <img
-        class="aspect-square w-full rounded-lg object-cover max-md:aspect-[16/9]"
-        src="/images/abstract-liquid-1.jpg"
-        alt=""
-        width="1000"
-        height="1750"
-        loading="lazy"
-      />
+      <div class="flex flex-wrap gap-3 md:flex-col md:items-stretch">
+        <a class="btn btn-primary" :href="`mailto:${profile.email}`">
+          <Mail /> {{ profile.email }}
+        </a>
+        <a class="btn btn-outline" :href="profile.linkedInUrl" target="_blank" rel="noopener">
+          LinkedIn <NewTabIcon />
+        </a>
+      </div>
     </div>
   </section>
 </template>
